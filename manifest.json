@@ -1,0 +1,153 @@
+{
+  "id": "./",
+  "name": "My Dukan Hisab",
+  "short_name": "My Dukan Hisab",
+  "description": "My Dukan Hisab: offline billing, stock, barcode scanning, Udhaar khata and WhatsApp ordering for Indian kirana, general and medical stores.",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "start_url": "./?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "portrait-primary",
+  "theme_color": "#7a1230",
+  "background_color": "#fff9ef",
+  "categories": [
+    "business",
+    "finance",
+    "productivity",
+    "shopping"
+  ],
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": [
+      "navigate-existing",
+      "auto"
+    ]
+  },
+  "handle_links": "preferred",
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Bill",
+      "short_name": "Bill",
+      "description": "Start a new bill",
+      "url": "./?go=bill",
+      "icons": [
+        {
+          "src": "shortcut-bill.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Items & Stock",
+      "short_name": "Items",
+      "description": "Manage items and stock",
+      "url": "./?go=items",
+      "icons": [
+        {
+          "src": "shortcut-items.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Udhaar Khata",
+      "short_name": "Khata",
+      "description": "Customer Udhaar ledger",
+      "url": "./?go=khata",
+      "icons": [
+        {
+          "src": "shortcut-khata.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Reports",
+      "short_name": "Reports",
+      "description": "Sales and profit reports",
+      "url": "./?go=reports",
+      "icons": [
+        {
+          "src": "shortcut-reports.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "shot-home.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Home dashboard with today's sales"
+    },
+    {
+      "src": "shot-items.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Items and stock management"
+    },
+    {
+      "src": "shot-khata.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Udhaar khata ledger"
+    },
+    {
+      "src": "shot-reports.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Sales and profit reports"
+    },
+    {
+      "src": "shot-wide.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "My Dukan Hisab on a large screen"
+    }
+  ]
+}
