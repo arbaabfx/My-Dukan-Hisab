@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="description" content="My Dukan Hisab: shop billing and online dukaan">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#7a1230">
 <meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="My Dukan Hisab">
@@ -111,7 +111,6 @@ a[data-a]{color:var(--sa);font-weight:700;cursor:pointer}
 .btn:not(.o):not(.r):not(.g)::after{display:none!important;animation:none!important}
 body{touch-action:manipulation}
 .row{content-visibility:auto;contain-intrinsic-size:auto 60px}
-#gm{contain:none!important;height:100vh;height:100dvh;min-height:100%}
 .wq{grid-column:1/-1;display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.wq button{padding:5px 10px;border-radius:14px;border:1px solid var(--go,#d9a21b);background:#fff8e6;font-size:12px;font-weight:700;color:var(--mr)}
 .ql{color:var(--mr);font-weight:700}
 .stg .c{padding:10px 12px;margin-bottom:8px}.stg .c>h3{margin:0;font-size:15px;display:flex;justify-content:flex-start;gap:8px;text-align:left;align-items:center;cursor:pointer}.stg .c.fold>h3:after{margin-left:auto;content:"›";font-size:20px;transform:rotate(90deg);transition:transform .15s}.stg .c.fold.open>h3:after{transform:rotate(-90deg)}.stg .c.fold:not(.open)>*:not(h3){display:none}.stg .c.fold.open>h3{margin-bottom:8px}.stg .in{height:42px;font-size:15px}.stg label{font-size:12px;margin-top:8px}.stg .btn{height:44px;font-size:15px}
@@ -247,112 +246,11 @@ nav{transform:translateZ(0);background:rgba(255,255,255,.84);backdrop-filter:blu
 #cw .cmp .row.cr{border-top:0;padding:2px 0;gap:8px}#cw .cmp .row.cr b{font-size:16px}#cw .cmp .cc{color:var(--sa);font-weight:700;font-size:14px;white-space:nowrap}
 #cw .cmp .in{height:44px}#cw .cmp .btn{height:44px;margin-top:8px}#cw .cmp .btn.big{height:50px;margin-top:10px}#cw .cmp .chips.pay .chip{padding:8px 14px}
 #cw .qh{font-size:12px;color:var(--mu);margin:6px 0 4px}#cw .pd{margin-top:8px;align-items:center}#dueL{font-size:12px;color:var(--mu);line-height:1.2}#dueL b{display:block;font-size:16px;color:var(--rd)}
-/* ===== Time Pass games ===== */
-#gm{position:fixed;inset:0;z-index:45;display:none;flex-direction:column;background:radial-gradient(120% 70% at 50% -10%,#7a1a38 0,#2c0b18 55%,#14060c 100%);color:#fff;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);touch-action:manipulation;-webkit-user-select:none;user-select:none;overflow:hidden;contain:strict}
-#gm.on{display:flex;animation:gmopen .38s cubic-bezier(.22,1,.36,1)}
-@keyframes gmopen{from{opacity:0;transform:translate3d(0,26px,0) scale(.985)}to{opacity:1;transform:none}}
-#gm button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
-#gm .gh{display:flex;align-items:center;gap:12px;padding:12px 14px 6px;max-width:560px;width:100%;margin:0 auto}
-#gm .gh b{flex:1;font-size:20px;letter-spacing:.2px}
-#gm .gr{display:flex;gap:8px}
-#gm .gbk{width:42px;height:42px;border-radius:14px;background:rgba(255,255,255,.1);display:grid;place-items:center;transition:transform .2s cubic-bezier(.34,1.56,.64,1),background .2s}
-#gm .gbk:active{transform:scale(.86);background:rgba(255,255,255,.2)}
-#gm .gbk .ic{width:22px;height:22px;stroke:#fff}
-#gm .gb{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;max-width:560px;margin:0 auto;padding:6px 16px 20px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
-#gm .gb.ani>*{animation:gmin .5s cubic-bezier(.22,1,.36,1) backwards}
-#gm .gb.ani>*:nth-child(2){animation-delay:.06s}#gm .gb.ani>*:nth-child(3){animation-delay:.12s}#gm .gb.ani>*:nth-child(4){animation-delay:.18s}#gm .gb.ani>*:nth-child(5){animation-delay:.24s}
-@keyframes gmin{from{opacity:0;transform:translate3d(0,18px,0) scale(.97)}to{opacity:1;transform:none}}
-#gm .gtg{margin:4px 0 6px;text-align:center;color:rgba(255,255,255,.75);font-size:14px;line-height:1.55}
-#gm .gcard{display:flex;align-items:center;gap:16px;width:100%;padding:18px;border-radius:22px;background:linear-gradient(135deg,var(--c1),var(--c2));box-shadow:0 14px 30px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.35);text-align:left;position:relative;overflow:hidden;transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
-#gm .gcard:active{transform:scale(.96)}
-#gm .gcard::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.28) 50%,transparent 65%);transform:translateX(-120%);animation:gsh 4s ease-in-out infinite}
-#gm .gcard svg{width:58px;height:58px;flex:none;fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 4px 6px rgba(0,0,0,.25));animation:gfl 3s ease-in-out infinite}
-@keyframes gfl{50%{transform:translateY(-4px) rotate(-4deg)}}
-#gm .gcard span{flex:1}#gm .gcard b{display:block;font-size:22px}#gm .gcard small{opacity:.92;font-size:13px}#gm .gcard u{text-decoration:none;font-size:34px;opacity:.85}
-#gm .gsec{align-self:flex-start;font-size:12.5px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;color:#ffd36b;margin-top:6px}
-#gm .gops{display:grid;gap:10px;width:100%}
-#gm .gop{position:relative;display:block;text-align:left;padding:14px 50px 14px 16px;border-radius:16px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.12);transition:transform .22s cubic-bezier(.34,1.56,.64,1),background .25s,border-color .25s,box-shadow .25s}
-#gm .gop b{display:block;font-size:16px}#gm .gop small{color:rgba(255,255,255,.7);font-size:13px}
-#gm .gop i{position:absolute;right:16px;top:50%;width:22px;height:22px;margin-top:-11px;border-radius:50%;border:2px solid rgba(255,255,255,.35);transition:background .25s,border-color .25s,box-shadow .25s}
-#gm .gop.on{background:rgba(255,211,107,.16);border-color:#ffd36b;box-shadow:0 8px 22px rgba(0,0,0,.28)}
-#gm .gop.on i{background:#ffd36b;border-color:#ffd36b;box-shadow:inset 0 0 0 4px #3a0f1f}
-#gm .gop:active{transform:scale(.97)}
-#gm .gdf{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%}#gm .gdf.two{grid-template-columns:repeat(2,1fr)}
-#gm .gdb{padding:13px 4px;border-radius:14px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.12);font-weight:700;font-size:15px;transition:transform .25s cubic-bezier(.34,1.56,.64,1),background .25s,box-shadow .25s}
-#gm .gdb.on{background:linear-gradient(135deg,#e8730c,#f59e2b);border-color:transparent;box-shadow:0 8px 20px rgba(232,115,12,.4);transform:translateY(-2px)}
-#gm .gdb:active{transform:scale(.94)}
-#gm .gds{align-self:stretch;text-align:center;font-size:13px;color:rgba(255,255,255,.78);min-height:18px}
-#gm .gstart{position:relative;overflow:hidden;width:100%;height:54px;border-radius:18px;font-size:18px;font-weight:800;letter-spacing:.4px;background:linear-gradient(135deg,#22c55e,#16a34a);box-shadow:0 12px 26px rgba(22,163,74,.4);margin-top:6px;transition:transform .2s cubic-bezier(.34,1.56,.64,1)}
-#gm .gstart:active{transform:scale(.96)}
-#gm .gstart::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.35) 50%,transparent 65%);transform:translateX(-120%);animation:gsh 3s ease-in-out infinite}
-@keyframes gsh{55%,100%{transform:translateX(120%)}}
-#gm .gst{display:flex;gap:10px;width:100%;justify-content:center}
-#gm .gch{flex:1;display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:14px;background:rgba(255,255,255,.09);font-size:14px}
-#gm .gch i{width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--c);flex:none}
-#gm .gch span{flex:1;opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#gm .gch b{font-size:20px;min-width:24px;text-align:right}
-#gm .gch.bst b{color:#ffd36b}
-#gm .pop{animation:gpop .35s cubic-bezier(.34,1.56,.64,1)}
-@keyframes gpop{40%{transform:scale(1.5)}}
-#gm .gcv{position:relative;width:min(100%,52vh);width:min(100%,calc(100dvh - 330px),520px);min-width:220px;aspect-ratio:1/1;border-radius:20px;overflow:hidden;border:2px solid rgba(255,255,255,.14);box-shadow:0 18px 44px rgba(0,0,0,.5),0 0 0 4px rgba(0,0,0,.18);touch-action:none;background:#1d0f15;flex:none}
-#gm .gcv canvas{display:block;width:100%;height:100%}
-#gm .gov{position:absolute;inset:0;display:none;place-items:center;background:rgba(14,5,10,.62);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
-#gm .gov.on{display:grid;animation:gfade .3s ease}
-@keyframes gfade{from{opacity:0}}
-#gm .gbx{display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px;text-align:center;animation:gmin .45s cubic-bezier(.22,1,.36,1)}
-#gm .gbx b{font-size:28px;line-height:1.2}#gm .gbx small{opacity:.82;font-size:14px}
-#gm .gbx em{font-style:normal;font-size:12px;font-weight:800;letter-spacing:.6px;padding:4px 12px;border-radius:99px;background:linear-gradient(135deg,#ffd36b,#f59e2b);color:#3a0f1f;animation:gpop .6s .2s cubic-bezier(.34,1.56,.64,1) backwards}
-#gm .gpl{min-width:160px;height:46px;padding:0 22px;border-radius:15px;background:linear-gradient(135deg,#22c55e,#16a34a);font-weight:800;font-size:16px;box-shadow:0 8px 20px rgba(22,163,74,.4);transition:transform .2s cubic-bezier(.34,1.56,.64,1)}
-#gm .gpl.o{background:rgba(255,255,255,.14);box-shadow:none;height:42px;font-weight:700}
-#gm .gpl:active{transform:scale(.94)}
-#gm .gct{width:100%;display:flex;justify-content:center;touch-action:none}
-#gm .gpd{display:grid;grid-template-columns:repeat(3,64px);grid-template-rows:repeat(2,56px);gap:8px;grid-template-areas:". u ." "l d r"}
-#gm .gpd button{border-radius:16px;background:rgba(255,255,255,.12);display:grid;place-items:center;touch-action:none;transition:transform .12s ease,background .12s}
-#gm .gpd .ic{width:26px;height:26px;stroke:#fff;stroke-width:2.6}
-#gm .gpd [data-d=u]{grid-area:u}#gm .gpd [data-d=l]{grid-area:l}#gm .gpd [data-d=d]{grid-area:d}#gm .gpd [data-d=r]{grid-area:r}
-#gm .gpd [data-d=d] .ic{transform:rotate(180deg)}#gm .gpd [data-d=l] .ic{transform:rotate(-90deg)}#gm .gpd [data-d=r] .ic{transform:rotate(90deg)}
-#gm .gpd button.hit,#gm .gtn button.hit{transform:scale(.88);background:rgba(255,255,255,.3)}
-#gm .gtn{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%}
-#gm .gtg2{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px;border-radius:18px;background:rgba(255,255,255,.07);border:1.5px solid var(--c)}
-#gm .gtg2 small{grid-column:1/-1;text-align:center;font-size:12px;font-weight:700;color:var(--c)}
-#gm .gtg2 button{height:58px;border-radius:14px;background:rgba(255,255,255,.12);display:grid;place-items:center;touch-action:none;transition:transform .12s ease,background .12s}
-#gm .gtg2 .ic{width:26px;height:26px;stroke:#fff;stroke-width:2.6}
-#gm .tsc{display:grid;grid-template-columns:1fr .8fr 1fr;gap:10px;width:100%}
-#gm .tsb{padding:10px 6px;border-radius:14px;background:rgba(255,255,255,.09);text-align:center}
-#gm .tsb small{display:block;font-size:12px;opacity:.8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#gm .tsb b{font-size:24px;display:block;line-height:1.2}
-#gm .tsb.x b{color:#ffb74d}#gm .tsb.o b{color:#4dd0e1}
-#gm .ttb{display:flex;gap:12px;justify-content:center}
-#gm .tp{display:flex;align-items:center;gap:8px;padding:7px 16px;border-radius:99px;background:rgba(255,255,255,.08);opacity:.5;border:1.5px solid transparent;transition:opacity .3s,transform .35s cubic-bezier(.34,1.56,.64,1),background .3s,box-shadow .3s,border-color .3s}
-#gm .tp.x{--c:#ffb74d}#gm .tp.o{--c:#4dd0e1}
-#gm .tp.on{opacity:1;transform:scale(1.08);background:rgba(255,255,255,.16);border-color:var(--c);box-shadow:0 0 16px var(--c)}
-#gm .tp svg{width:20px;height:20px}#gm .tp span{font-size:14px;font-weight:600}
-#gm #tlb{font-size:15px;opacity:.92;height:20px;text-align:center}
-#gm .tb{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:min(100%,46vh,400px);width:min(100%,calc(100dvh - 400px),400px);min-width:240px;aspect-ratio:1/1;padding:10px;border-radius:24px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.12);box-shadow:0 18px 40px rgba(0,0,0,.4);flex:none}
-#gm .tc{position:relative;border-radius:16px;background:rgba(255,255,255,.1);display:grid;place-items:center;transition:transform .2s cubic-bezier(.34,1.56,.64,1),background .25s}
-#gm .tc:not(.f):active{transform:scale(.9);background:rgba(255,255,255,.22)}
-#gm .tc.win{background:rgba(255,211,107,.22);animation:gwin .6s ease-in-out infinite alternate}
-@keyframes gwin{to{transform:scale(1.06);box-shadow:0 0 20px rgba(255,211,107,.6)}}
-#gm .tm{width:72%;height:72%;fill:none;stroke-width:10;stroke-linecap:round;overflow:visible}
-#gm .tp .tm{width:20px;height:20px;stroke-width:12}
-#gm .tm.x{stroke:#ffb74d;filter:drop-shadow(0 0 6px rgba(255,183,77,.5))}#gm .tm.o{stroke:#4dd0e1;filter:drop-shadow(0 0 6px rgba(77,208,225,.5))}
-#gm .tm.a path,#gm .tm.a circle{stroke-dasharray:1;stroke-dashoffset:1;animation:gdr .36s ease-out forwards}
-#gm .tm.a path:nth-child(2){animation-delay:.16s}
-@keyframes gdr{to{stroke-dashoffset:0}}
-#gm .twl{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-#gm .twl line{stroke:#fff;stroke-width:9;stroke-linecap:round;filter:drop-shadow(0 0 8px #fff)}
-#gm .twl line.a{stroke-dasharray:1;stroke-dashoffset:1;animation:gdr .5s .25s ease-out forwards}
-#gm #tres{position:relative;width:100%;min-height:118px;display:flex;justify-content:center;align-items:flex-start}
-#gm #tres .gbx{padding:6px}
-#gm .gcf{position:absolute;left:50%;top:40%;pointer-events:none;z-index:3}
-#gm .gcf i{position:absolute;width:8px;height:12px;border-radius:2px;background:var(--c);animation:gcf 1.3s cubic-bezier(.2,.7,.3,1) forwards}
-@keyframes gcf{from{transform:translate(0,0) rotate(0);opacity:1}to{transform:translate(var(--x),calc(var(--y) + 230px)) rotate(var(--r));opacity:0}}
-#gm .dots span{display:inline-block;animation:gdt 1s infinite}#gm .dots span:nth-child(2){animation-delay:.15s}#gm .dots span:nth-child(3){animation-delay:.3s}
-@keyframes gdt{0%,60%,100%{opacity:.25}30%{opacity:1}}
-@media(max-height:640px){#gm .gpd{grid-template-columns:repeat(3,56px);grid-template-rows:repeat(2,48px)}#gm .gtg2 button{height:50px}}
 
 </style></head><body>
 <div id="app"><header id="hd"><button id="bk" class="ib hide" data-a="back">‹</button><div class="ttl"><b id="tt"></b><small id="ts"></small></div><button class="ib" data-a="nav" data-v="bill">+ New Bill</button></header><div class="tri"></div><main id="main"></main></div>
 <nav id="nav"></nav>
-<div id="sh"><div id="sc"></div></div><div id="gm"></div><div id="tst"></div><div id="lk" class="hide"></div><div id="st" class="hide"></div>
+<div id="sh"><div id="sc"></div></div><div id="tst"></div><div id="lk" class="hide"></div><div id="st" class="hide"></div>
 <div id="scn" class="hide"><video id="cv" playsinline muted></video><div id="sinfo" class="hide"><div id="sm" style="font-weight:700"></div><div class="tl"><span id="sn2">0 items</span><b id="st2">₹0</b></div><button class="btn o" data-a="sundo" style="height:40px;margin-top:6px">Remove last item</button></div><div id="sq" class="hide"><div id="sqm" style="font-weight:700;color:var(--rd)"></div><label>Item name</label><input id="sq-n" class="in" placeholder="e.g. Maggi" autocomplete="off"><div class="two"><div><label>Selling price (₹) *</label><input id="sq-p" class="in" inputmode="decimal"></div><div><label>Cost (optional)</label><input id="sq-c" class="in" inputmode="decimal"></div></div><div class="two"><button class="btn g" data-a="sqadd">Add to bill</button><button class="btn o" data-a="sqskip">Skip</button></div></div><button class="btn" id="sdone" data-a="stopscan">Done</button></div>
 <input type="file" id="rf" accept=".json,application/json" class="hf">
 <script>
@@ -478,7 +376,7 @@ function sheet(h){$('#sc').innerHTML=h;$('#sc').scrollTop=0;shOpen=true;$('#sh')
 function closeSheet(){shOpen=false;$('#sh').classList.remove('on')}
 $('#sh').onclick=e=>{if(e.target.id==='sh')closeSheet()};
 history.replaceState({r:1},'');history.pushState({r:2},'');let arm=0;
-addEventListener('popstate',()=>{if($('#gm').classList.contains('on')){gmBack();history.pushState({r:2},'');return}
+addEventListener('popstate',()=>{
  if(!$('#scn').classList.contains('hide')){stopScan();history.pushState({r:2},'');return}
  if(shOpen){closeSheet();history.pushState({r:2},'');return}
  {const dw=$('#dw');if(dw&&!dw.classList.contains('hide')){closeDw();history.pushState({r:2},'');return}}
@@ -516,7 +414,7 @@ V.home=()=>{const T=day0(),tb=D.bills.filter(b=>b.ts>=T),due=sum(D.cust,c=>Math.
  if(soon.length)h+=`<div class="c"><h3>Expiring Soon</h3>${soon.slice(0,5).map(i=>`<div class="row"><div class="nm"><b>${esc(i.name)}</b></div><span class="bg d">${new Date(i.exp).toLocaleDateString('en-IN',{day:'2-digit',month:'short'})}</span></div>`).join('')}</div>`;
  h+=`<div class="c"><h3>Haal ke bills</h3>${D.bills.length?[...D.bills].reverse().slice(0,5).map(b=>`<button class="row" data-a="showbill" data-id="${b.id}"><div class="nm"><b>${bno(b)} · ${esc(cname(b.cust)||'Walk-in')}</b><span class="mu">${fd(b.ts)}, ${ft(b.ts)} · ${b.pay}</span></div><b>${R(b.total)}</b></button>`).join(''):'<div class="mu">No bills yet. Tap “New Bill” to start.</div>'}</div>`;
  return h};
-const TC=()=>`<div class="c" style="background:#fffdf7"><h3>Terms &amp; Conditions · Legal Disclaimer · नियम और शर्तें</h3><div class="mu" style="line-height:1.6;font-size:13px"><div style="margin-bottom:10px"><div><b>1. Zero liability.</b> The app developer/maker holds ZERO liability for any data loss, corrupt or cleared browser storage, missed sales, incorrect tax/GST or other calculations, device failure, theft or damage, or any direct or indirect business loss.</div><div style="color:#5b4636;font-style:italic"><b>1. Koi zimmedari nahi.</b> App banane wale ki kisi bhi cheez ki zimmedari nahi hai: data kho jaye, storage kharab ya clear ho jaye, sale chhoot jaye, GST ya hisaab galat ho, phone kharab/chori ho, ya dhandhe mein koi bhi nuksan ho.</div></div><div style="margin-bottom:10px"><div><b>2. As-is, at your own risk.</b> The app is provided “as is”, without warranty of any kind. You use it entirely at your own risk.</div><div style="color:#5b4636;font-style:italic"><b>2. Jaisa hai waisa, apne risk par.</b> App bina kisi guarantee ke diya gaya hai. Ise aap apni poori zimmedari par use karte ho.</div></div><div style="margin-bottom:10px"><div><b>3. Your data stays on your phone.</b> All data (bills, items, Udhaar khata, customer details) is stored only in your own phone’s browser storage. The app maker keeps no copy of this data and cannot see or recover it. The only information kept on our server is your login email, your trial start date and your plan (see clause 7). Optional features you choose to use (barcode name lookup, WhatsApp sharing) send only what you request to those services, under their own terms.</div><div style="color:#5b4636;font-style:italic"><b>3. Data sirf aapke phone mein.</b> Aapka sara data (bills, items, Udhaar khata, customer ki jaankari) sirf aapke phone ke browser storage mein rehta hai. App maker ke paas is data ki koi copy nahi hai, wo use dekh ya wapas nahi la sakta. Server par sirf aapka login email, trial shuru hone ki tareekh aur plan rakha jata hai (clause 7 dekho). Jo optional features aap khud chalate ho (barcode se naam, WhatsApp) wo sirf wahi bhejte hain jo aap maango, un services ke apne niyamon ke saath.</div></div><div style="margin-bottom:10px"><div><b>4. You are responsible.</b> You are 100% responsible for taking regular offline JSON backups (at least every 30 days), checking every bill and total, getting GST verified by a certified CA before filing returns, keeping your PIN safe and safeguarding your physical phone. Clearing browser data or uninstalling can erase everything.</div><div style="color:#5b4636;font-style:italic"><b>4. Zimmedari aapki.</b> Regular offline JSON backup lena (kam se kam 30 din mein ek baar), har bill aur total check karna, GST filing se pehle certified CA se verify karwana, PIN aur apna phone surakshit rakhna, ye sab 100% aapki zimmedari hai. Browser data clear karne ya app uninstall karne se sab kuch mit sakta hai.</div></div><div style="margin-bottom:10px"><div><b>5. Auto-backup is not a guarantee.</b> Bills older than 24 hours move to an automatic on-phone backup and are deleted after 30 days. The snapshot restore is a convenience, not a promise.</div><div style="color:#5b4636;font-style:italic"><b>5. Auto-backup guarantee nahi hai.</b> 24 ghante se purane bills phone ke andar auto-backup mein jate hain aur 30 din baad hat jate hain. Snapshot restore sirf suvidha hai, vaada nahi.</div></div><div style="margin-bottom:10px"><div><b>7. Login, free trial and plans.</b> Login with Google is optional and is used for the 14-day free trial and paid plans (Monthly ₹69, Yearly ₹799, Lifetime ₹5,999). Free plan: 30 items and 10 Udhaar customers; Google Drive backup needs Pro. Plans are activated by the app maker after you confirm your order; nothing is charged or renewed automatically. Only your login email, trial start date and plan are kept on our server.</div><div style="color:#5b4636;font-style:italic"><b>7. Login, free trial aur plans.</b> Google login optional hai. Free plan mein 30 items aur 10 Udhaar customers; Drive backup ke liye Pro. Plan aapke order confirm karne ke baad chalu hota hai; kuch apne aap nahi katta. Server par sirf email, trial ki tareekh aur plan rakha jata hai.</div></div><div style="border-top:1px dashed var(--bd);padding-top:8px"><b>By using My Dukan Hisab you accept all of the above.</b><br><i>My Dukan Hisab use karne ka matlab hai ki aap upar ki sab baatein maante ho.</i></div></div></div>`;
+const TC=()=>`<div class="c" style="background:#fffdf7"><h3>Terms &amp; Conditions · Legal Disclaimer · नियम और शर्तें</h3><div class="mu" style="line-height:1.6;font-size:13px"><div style="margin-bottom:10px"><div><b>1. Zero liability.</b> The app developer/maker holds ZERO liability for any data loss, corrupt or cleared browser storage, missed sales, incorrect tax/GST or other calculations, device failure, theft or damage, or any direct or indirect business loss.</div><div style="color:#5b4636;font-style:italic"><b>1. Koi zimmedari nahi.</b> App banane wale ki kisi bhi cheez ki zimmedari nahi hai: data kho jaye, storage kharab ya clear ho jaye, sale chhoot jaye, GST ya hisaab galat ho, phone kharab/chori ho, ya dhandhe mein koi bhi nuksan ho.</div></div><div style="margin-bottom:10px"><div><b>2. As-is, at your own risk.</b> The app is provided “as is”, without warranty of any kind. You use it entirely at your own risk.</div><div style="color:#5b4636;font-style:italic"><b>2. Jaisa hai waisa, apne risk par.</b> App bina kisi guarantee ke diya gaya hai. Ise aap apni poori zimmedari par use karte ho.</div></div><div style="margin-bottom:10px"><div><b>3. Your data stays on your phone.</b> All data (bills, items, Udhaar khata, customer details) is stored only in your own phone’s browser storage. The app maker keeps no copy of this data and cannot see or recover it. The only information kept on our server is your login email, your trial start date and your plan (see clause 7). Optional features you choose to use (barcode name lookup, WhatsApp sharing) send only what you request to those services, under their own terms.</div><div style="color:#5b4636;font-style:italic"><b>3. Data sirf aapke phone mein.</b> Aapka sara data (bills, items, Udhaar khata, customer ki jaankari) sirf aapke phone ke browser storage mein rehta hai. App maker ke paas is data ki koi copy nahi hai, wo use dekh ya wapas nahi la sakta. Server par sirf aapka login email, trial shuru hone ki tareekh aur plan rakha jata hai (clause 7 dekho). Jo optional features aap khud chalate ho (barcode se naam, WhatsApp) wo sirf wahi bhejte hain jo aap maango, un services ke apne niyamon ke saath.</div></div><div style="margin-bottom:10px"><div><b>4. You are responsible.</b> You are 100% responsible for taking regular offline JSON backups (at least every 30 days), checking every bill and total, getting GST verified by a certified CA before filing returns, keeping your PIN safe and safeguarding your physical phone. Clearing browser data or uninstalling can erase everything.</div><div style="color:#5b4636;font-style:italic"><b>4. Zimmedari aapki.</b> Regular offline JSON backup lena (kam se kam 30 din mein ek baar), har bill aur total check karna, GST filing se pehle certified CA se verify karwana, PIN aur apna phone surakshit rakhna, ye sab 100% aapki zimmedari hai. Browser data clear karne ya app uninstall karne se sab kuch mit sakta hai.</div></div><div style="margin-bottom:10px"><div><b>5. Auto-backup is not a guarantee.</b> Bills older than 24 hours move to an automatic on-phone backup and are deleted after 30 days. The snapshot restore is a convenience, not a promise.</div><div style="color:#5b4636;font-style:italic"><b>5. Auto-backup guarantee nahi hai.</b> 24 ghante se purane bills phone ke andar auto-backup mein jate hain aur 30 din baad hat jate hain. Snapshot restore sirf suvidha hai, vaada nahi.</div></div><div style="margin-bottom:10px"><div><b>7. Login, free trial and plans.</b> Login with Google is optional and is used for the 14-day free trial and paid plans (Monthly ₹69, Yearly ₹799, Lifetime ₹5,999). Free plan: 100 items and 10 Udhaar customers; Google Drive backup needs Pro. Plans are activated by the app maker after you confirm your order; nothing is charged or renewed automatically. Only your login email, trial start date and plan are kept on our server.</div><div style="color:#5b4636;font-style:italic"><b>7. Login, free trial aur plans.</b> Google login optional hai. Free plan mein 100 items aur 10 Udhaar customers; Drive backup ke liye Pro. Plan aapke order confirm karne ke baad chalu hota hai; kuch apne aap nahi katta. Server par sirf email, trial ki tareekh aur plan rakha jata hai.</div></div><div style="border-top:1px dashed var(--bd);padding-top:8px"><b>By using My Dukan Hisab you accept all of the above.</b><br><i>My Dukan Hisab use karne ka matlab hai ki aap upar ki sab baatein maante ho.</i></div></div></div>`;
 const cname=id=>(D.cust.find(c=>c.id===id)||{}).name;
 A.sample=()=>{[['Atta 5 kg',265,235,'pcs',0,'Grocery'],['Rice 1 kg',72,60,'kg',0,'Grocery'],['Toor Dal 1 kg',165,145,'kg',0,'Grocery'],['Sugar 1 kg',48,42,'kg',0,'Grocery'],['Salt 1 kg',24,20,'pcs',0,'Grocery'],['Mustard Oil 1 L',165,148,'pcs',5,'Grocery'],['Tea 250 g',120,100,'pcs',5,'Beverages'],['Cold Drink 600 ml',40,34,'pcs',12,'Beverages'],['Biscuits',10,8,'pcs',18,'Snacks'],['Namkeen 200 g',50,40,'pcs',12,'Snacks'],['Maggi',14,12,'pcs',12,'Snacks'],['Bath Soap',38,31,'pcs',18,'Personal Care'],['Detergent 1 kg',110,92,'pcs',18,'Daily Essentials'],['Milk 500 ml',30,27,'pcs',0,'Dairy'],['Bread',45,38,'pcs',0,'Daily Essentials']].forEach(([name,price,cost,unit,gst,cat])=>D.items.push({id:uid(),name,price,cost,stock:25,unit,gst,low:5,cat,bc:'',exp:''}));D.seen=1;save();toast('Sample items added');go(cur)};
 /* ===== ITEMS ===== */
@@ -665,159 +563,7 @@ A.saverecv=t=>{const c=D.cust.find(x=>x.id===+t.dataset.id),a=mny($('#r-a').valu
 A.remind=t=>{const c=D.cust.find(x=>x.id===+t.dataset.id),s=D.shop;if(c.bal<=0)return toast('No balance due');wa(c.phone,`Hello ${c.name},\nA gentle reminder from ${s.name||'our shop'}: your pending balance is *${R(c.bal)}*.${s.upi?'\nYou can pay by UPI: '+s.upi:''}\nThank you!`)};
 A.delcust=t=>ask('Delete this customer and history link?','Yes, delete',()=>{D.cust=D.cust.filter(x=>x.id!==+t.dataset.id);save();go(cur)});
 /* ===== MORE ===== */
-/* ===== TIME PASS: Snake + Tic-Tac-Toe (offline, runs only when opened) ===== */
-const GM={scr:'menu',game:'',mode:'solo',diff:'medium',me:'X',sn:null,tt:null,tm:0},GX=20;
-let gmBest={};try{gmBest=JSON.parse(localStorage.getItem('ds_gm')||'{}')||{}}catch{}
-const gmSaveB=()=>{try{localStorage.setItem('ds_gm',JSON.stringify(gmBest))}catch{}},gmVib=n=>{try{navigator.vibrate&&navigator.vibrate(n)}catch{}},gmRnd=n=>Math.floor(Math.random()*n);
-const gmSv=p=>`<svg viewBox="0 0 24 24" class="ic">${p}</svg>`;
-const gmIc={back:gmSv('<path d="M15 5l-7 7 7 7"/>'),pause:gmSv('<path d="M8 5v14M16 5v14"/>'),up:gmSv('<path d="M6 15l6-6 6 6"/>'),tl:gmSv('<path d="M15 5l-7 7 7 7"/>'),tr:gmSv('<path d="M9 5l7 7-7 7"/>'),
- snake:'<svg viewBox="0 0 48 48"><path d="M10 38h14a8 8 0 000-16h-4a6 6 0 010-12h18"/><circle cx="39" cy="10" r="2.5"/></svg>',
- ttt:'<svg viewBox="0 0 48 48"><path d="M18 6v36M30 6v36M6 18h36M6 30h36"/><path d="M9 9l6 6M15 9l-6 6"/><circle cx="39" cy="39" r="4"/></svg>'};
-const gmH=(t,r)=>`<div class="gh"><button class="gbk" data-a="gmback" aria-label="Back">${gmIc.back}</button><b>${t}</b><div class="gr">${r||''}</div></div>`;
-function gmStop(){const S=GM.sn;if(S){cancelAnimationFrame(S.raf);GM.sn=null}clearTimeout(GM.tm);GM.tm=0}
-function gmRender(anim=true){gmStop();const g=$('#gm');let h;
- if(GM.scr==='menu')h=gmMenuH();else if(GM.scr==='setup')h=gmSetupH();else h=GM.game==='snake'?snHtml():ttHtml();
- g.innerHTML=h;const b=g.querySelector('.gb');if(b&&anim)b.classList.add('ani');
- if(GM.scr==='play'){GM.game==='snake'?snInit():ttKick()}}
-const gmMenuH=()=>gmH('Time Pass')+`<div class="gb"><p class="gtg">Customer aane tak thoda break lo.<br>Offline chalta hai · koi ads nahi</p>
-<button class="gcard" data-a="gmpick" data-g="snake" style="--c1:#15803d;--c2:#4ade80">${gmIc.snake}<span><b>Snake</b><small>Solo · vs Computer · 1v1</small></span><u>›</u></button>
-<button class="gcard" data-a="gmpick" data-g="ttt" style="--c1:#c2410c;--c2:#f59e2b">${gmIc.ttt}<span><b>Tic-Tac-Toe</b><small>vs Computer · 1v1</small></span><u>›</u></button></div>`;
-const gmOpt=(k,v,t,s)=>`<button class="gop ${GM[k]===v?'on':''}" data-a="gmset" data-k="${k}" data-v="${v}"><b>${t}</b><small>${s}</small><i></i></button>`;
-function gmSetupH(){const sn=GM.game==='snake';
- const modes=sn?[['solo','Solo','Apna high score banao'],['cpu','vs Computer','Computer snake se muqabla'],['duo','1v1 Players','2 log, ek phone']]:[['cpu','vs Computer','Aap vs Computer'],['duo','1v1 Players','2 log, ek phone']];
- if(!modes.some(m=>m[0]===GM.mode))GM.mode=modes[0][0];
- const ds=sn?{easy:'Slow speed · walls se paar nikal sakte ho',medium:'Normal speed · walls se takrao to game over',hard:'Fast · har khane par aur tez hoti hai'}:{easy:'Computer galtiyan karta hai',medium:'Smart hai, par kabhi kabhi chook jata hai',hard:'Unbeatable · aap haara nahi sakte'};
- const showD=sn||GM.mode==='cpu',best=sn&&GM.mode==='solo'?((gmBest.snake||{})[GM.diff]||0):0;
- return gmH(sn?'Snake':'Tic-Tac-Toe')+`<div class="gb"><div class="gsec">Mode</div><div class="gops">${modes.map(m=>gmOpt('mode',m[0],m[1],m[2])).join('')}</div>
- ${showD?`<div class="gsec">Difficulty</div><div class="gdf">${['easy','medium','hard'].map(v=>`<button class="gdb ${GM.diff===v?'on':''}" data-a="gmset" data-k="diff" data-v="${v}">${v[0].toUpperCase()+v.slice(1)}</button>`).join('')}</div><div class="gds">${ds[GM.diff]}${best?` · Best: ${best}`:''}</div>`:''}
- ${!sn&&GM.mode==='cpu'?`<div class="gsec">Aap kaunsa chaloge</div><div class="gdf two">${['X','O'].map(v=>`<button class="gdb ${GM.me===v?'on':''}" data-a="gmset" data-k="me" data-v="${v}">${v}</button>`).join('')}</div>`:''}
- <button class="gstart" data-a="gmstart">Start</button></div>`}
-function gmConfetti(el){if(!el)return;const w=document.createElement('div');w.className='gcf';let h='';for(let i=0;i<22;i++)h+=`<i style="--x:${(Math.random()*260-130)|0}px;--y:${(-70-Math.random()*120)|0}px;--r:${(Math.random()*720-360)|0}deg;--c:${['#ffd36b','#4ade80','#60a5fa','#f472b6','#fb923c'][i%5]};animation-delay:${(Math.random()*.15).toFixed(2)}s"></i>`;w.innerHTML=h;el.appendChild(w);setTimeout(()=>w.remove(),1700)}
-function gmOpen(){GM.scr='menu';gmRender();$('#gm').classList.add('on')}
-function gmClose(){gmStop();const g=$('#gm');g.classList.remove('on');g.innerHTML=''}
-function gmBack(){if(GM.scr==='play'){GM.scr='setup';gmRender()}else if(GM.scr==='setup'){GM.scr='menu';gmRender()}else gmClose()}
-A.games=gmOpen;A.gmback=gmBack;A.gmmenu=()=>{GM.scr='menu';gmRender()};
-A.gmpick=t=>{GM.game=t.dataset.g;GM.mode=GM.game==='snake'?'solo':'cpu';GM.scr='setup';gmRender()};
-A.gmset=t=>{GM[t.dataset.k]=t.dataset.v;gmRender(false)};
-A.gmstart=()=>{if(GM.game==='ttt')GM.tt={b:Array(9).fill(''),turn:'X',starter:'X',sc:{X:0,O:0,D:0},over:false,res:null,busy:false};GM.scr='play';gmRender()};
-A.gmagain=()=>gmRender(false);
-A.gmgo=()=>{GM.sn&&snGo(GM.sn)};A.gmpause=()=>{const S=GM.sn;if(S)S.st==='run'?snPause(S):snResume(S)};
-/* ---------- SNAKE ---------- */
-const SD={u:{x:0,y:-1},d:{x:0,y:1},l:{x:-1,y:0},r:{x:1,y:0}};
-function snHtml(){const m=GM.mode,n1=m==='solo'?'Score':m==='cpu'?'You':'P1',n2=m==='cpu'?'Computer':'P2';
- const pad=m==='duo'?`<div class="gtn">${[['P1 · key A / D','#4ade80',0],['P2 · key ← / →','#fbbf24',1]].map(([n,c,i])=>`<div class="gtg2" style="--c:${c}"><small>${n}</small><button data-p="${i}" data-t="-1" aria-label="Turn left">${gmIc.tl}</button><button data-p="${i}" data-t="1" aria-label="Turn right">${gmIc.tr}</button></div>`).join('')}</div>`
- :`<div class="gpd">${['u','l','d','r'].map(d=>`<button data-d="${d}" aria-label="${d}">${gmIc.up}</button>`).join('')}</div>`;
- return gmH('Snake',`<button class="gbk" data-a="gmpause" aria-label="Pause">${gmIc.pause}</button>`)+`<div class="gb"><div class="gst"><div class="gch" style="--c:#4ade80"><i></i><span>${n1}</span><b id="gs1">0</b></div>${m==='solo'?`<div class="gch bst"><span>Best</span><b id="gsb">${(gmBest.snake||{})[GM.diff]||0}</b></div>`:`<div class="gch" style="--c:${m==='cpu'?'#a78bfa':'#fbbf24'}"><i></i><span>${n2}</span><b id="gs2">0</b></div>`}</div>
- <div class="gcv" id="gcv"><canvas id="gc"></canvas><div class="gov" id="gov"></div></div><div class="gct">${pad}</div></div>`}
-function snInit(){const m=GM.mode,cfg={easy:{s:185,min:140,r:2,wrap:1,ai:0},medium:{s:140,min:98,r:2.5,wrap:0,ai:1},hard:{s:108,min:60,r:3,wrap:0,ai:2}}[GM.diff]||{s:140,min:98,r:2.5,wrap:0,ai:1};
- const mk=(x,y,dx,col,dk,ctl)=>({b:[{x,y},{x:x-dx,y},{x:x-2*dx,y}],pb:null,dir:{x:dx,y:0},q:[],col,dk,sc:0,alive:true,ctl});
- const p=[mk(5,10,1,'#4ade80','#15803d','h1')];if(m!=='solo')p.push(m==='cpu'?mk(14,9,-1,'#a78bfa','#5b21b6','ai'):mk(14,9,-1,'#fbbf24','#b45309','h2'));
- p.forEach(s=>{s.pb=s.b.slice()});const cv=$('#gc');
- const S=GM.sn={cfg,m,p,step:cfg.s,acc:0,last:0,st:'ready',cv,cx:cv.getContext('2d'),bg:null,food:null,fa:0,parts:[],shake:0,res:null,raf:0,sw:0,sx:0,sy:0};
- S.food=snFood(S);snOv(S);S.raf=requestAnimationFrame(snLoop)}
-function snFood(S){const o=new Set();S.p.forEach(p=>p.b.forEach(c=>o.add(c.y*GX+c.x)));let k,n=0;do{k=gmRnd(GX*GX)}while(o.has(k)&&n++<600);S.fa=0;return{x:k%GX,y:(k/GX)|0}}
-function snOv(S){const o=$('#gov');if(!o)return;if(S.st==='run'){o.className='gov';o.innerHTML='';return}let h='';
- if(S.st==='ready')h=`<div class="gbx"><b>Ready?</b><small>${S.m==='duo'?'Dono players apne buttons se mudo':'Swipe karo ya buttons dabao'}</small><button class="gpl" data-a="gmgo">Start</button></div>`;
- else if(S.st==='pause')h=`<div class="gbx"><b>Paused</b><button class="gpl" data-a="gmpause">Resume</button><button class="gpl o" data-a="gmmenu">Menu</button></div>`;
- else{const r=S.res||{t:'Game Over',s:''};h=`<div class="gbx"><b>${r.t}</b><small>${r.s}</small>${r.nb?'<em>NEW BEST!</em>':''}<button class="gpl" data-a="gmagain">Play Again</button><button class="gpl o" data-a="gmmenu">Menu</button></div>`}
- o.className='gov on';o.innerHTML=h;if(S.st==='over'&&S.res&&(S.res.win||S.res.nb))gmConfetti(o)}
-function snGo(S){if(S.st!=='ready')return;S.st='run';S.acc=0;snOv(S)}
-function snPause(S){if(S.st!=='run')return;S.st='pause';snOv(S)}
-function snResume(S){if(S.st!=='pause')return;S.st='run';S.last=0;snOv(S)}
-function snDir(p,d){const S=GM.sn;if(!S||!p||!p.alive||S.st==='over'||S.st==='pause')return;const l=p.q.length?p.q[p.q.length-1]:p.dir;if((d.x===-l.x&&d.y===-l.y)||(d.x===l.x&&d.y===l.y))return;if(p.q.length<2)p.q.push(d);if(S.st==='ready')snGo(S)}
-function snTurn(p,t){if(!p)return;const l=p.q.length?p.q[p.q.length-1]:p.dir;snDir(p,t<0?{x:l.y,y:-l.x}:{x:-l.y,y:l.x})}
-function snBurst(c,col,n){const a=[];for(let i=0;i<n;i++){const an=Math.random()*6.283,sp=2+Math.random()*5;a.push({x:c.x,y:c.y,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp,l:1,c:col})}return a}
-function snHud(S){S.p.forEach((p,i)=>{const e=$(i?'#gs2':'#gs1');if(e&&+e.textContent!==p.sc){e.textContent=p.sc;e.classList.remove('pop');void e.offsetWidth;e.classList.add('pop')}})}
-function snTick(S){const al=S.p.filter(p=>p.alive);
- al.forEach(p=>{p.pb=p.b.slice();if(p.ctl==='ai')snAI(S,p);else if(p.q.length)p.dir=p.q.shift()});
- const nh=al.map(p=>{let x=p.b[0].x+p.dir.x,y=p.b[0].y+p.dir.y,w=0;if(x<0||y<0||x>=GX||y>=GX){if(S.cfg.wrap){x=(x+GX)%GX;y=(y+GX)%GX}else w=1}return{x,y,w,g:!w&&x===S.food.x&&y===S.food.y}});
- const occ=new Set();al.forEach((p,i)=>p.b.forEach((c,k)=>{if(k===p.b.length-1&&!nh[i].g)return;occ.add(c.y*GX+c.x)}));
- const dd=nh.map((h,i)=>h.w||occ.has(h.y*GX+h.x)||nh.some((o,j)=>j!==i&&!o.w&&o.x===h.x&&o.y===h.y));let ate=0;
- al.forEach((p,i)=>{if(dd[i]){p.alive=false;S.parts.push(...snBurst(p.b[0],p.col,16));return}const h=nh[i];p.b.unshift({x:h.x,y:h.y});if(h.g){p.sc++;ate=1;S.parts.push(...snBurst(S.food,p.col,10));S.step=Math.max(S.cfg.min,S.step-S.cfg.r);gmVib(10)}else p.b.pop()});
- if(ate){S.food=snFood(S);snHud(S)}
- if(dd.some(Boolean)){S.st='over';S.shake=1;gmVib([40,40,60]);snEnd(S)}}
-function snEnd(S){const[a,b]=S.p;let r;
- if(S.m==='solo'){const bs=gmBest.snake=gmBest.snake||{},nb=a.sc>(bs[GM.diff]||0);if(nb){bs[GM.diff]=a.sc;gmSaveB();const e=$('#gsb');if(e)e.textContent=a.sc}r={t:'Game Over',s:'Score: '+a.sc,nb}}
- else{const w=a.alive&&!b.alive?0:b.alive&&!a.alive?1:-1,nm=S.m==='cpu'?['You','Computer']:['Player 1','Player 2'];r=w<0?{t:'Draw!',s:'Dono takra gaye'}:{t:S.m==='cpu'?(w===0?'You Win!':'Computer Wins'):nm[w]+' Wins!',s:nm[0]+' '+a.sc+' · '+nm[1]+' '+b.sc,win:S.m==='duo'||w===0}}
- S.res=r;setTimeout(()=>{if(GM.sn===S)snOv(S)},650)}
-function snAI(S,p){const lv=S.cfg.ai,W=GX,h=p.b[0],opp=S.p.find(o=>o!==p),D4=[SD.u,SD.d,SD.l,SD.r],blk=new Uint8Array(W*W);
- S.p.forEach(o=>o.b.forEach((c,k)=>{if(k<o.b.length-1)blk[c.y*W+c.x]=1}));
- const nb=(k,d)=>{let x=(k%W)+d.x,y=((k/W)|0)+d.y;if(x<0||y<0||x>=W||y>=W){if(S.cfg.wrap){x=(x+W)%W;y=(y+W)%W}else return -1}return y*W+x},hk=h.y*W+h.x;
- let op=D4.filter(d=>!(d.x===-p.dir.x&&d.y===-p.dir.y)).map(d=>({d,k:nb(hk,d)})).filter(o=>o.k>=0&&!blk[o.k]);if(!op.length)return;
- if(lv===2&&opp&&opp.alive){const ok=opp.b[0].y*W+opp.b[0].x,near=new Set(D4.map(d=>nb(ok,d))),sf=op.filter(o=>!near.has(o.k));if(sf.length)op=sf}
- const fk=S.food.y*W+S.food.x,dist=new Int16Array(W*W).fill(-1);dist[fk]=0;const qu=[fk];
- for(let i=0;i<qu.length;i++){const k=qu[i];for(const d of D4){const n=nb(k,d);if(n>=0&&!blk[n]&&dist[n]<0){dist[n]=dist[k]+1;qu.push(n)}}}
- const space=k0=>{const seen=new Uint8Array(W*W);seen[k0]=1;const q=[k0];for(let i=0;i<q.length&&i<220;i++)for(const d of D4){const n=nb(q[i],d);if(n>=0&&!blk[n]&&!seen[n]){seen[n]=1;q.push(n)}}return q.length};
- if(lv>=1){op.forEach(o=>{o.sp=space(o.k)});const need=lv===2?Math.min(p.b.length+2,40):Math.min(p.b.length,10),ok=op.filter(o=>o.sp>=need);if(ok.length)op=ok;else{const m=Math.max(...op.map(o=>o.sp));op=op.filter(o=>o.sp===m)}}
- let ch;if(Math.random()<(lv===0?.22:lv===1?.07:0))ch=op[gmRnd(op.length)];
- else{const rc=op.filter(o=>dist[o.k]>=0).sort((a,b)=>dist[a.k]-dist[b.k]);ch=rc.length?rc[0]:op[gmRnd(op.length)]}
- p.dir=ch.d}
-function snLoop(ts){const S=GM.sn;if(!S)return;S.raf=requestAnimationFrame(snLoop);
- if(!$('#lk').classList.contains('hide')){gmClose();return}
- const dt=Math.min(50,ts-(S.last||ts));S.last=ts;if(document.hidden&&S.st==='run')snPause(S);
- if(S.st==='run'){S.acc+=dt;let n=0;while(S.acc>=S.step&&S.st==='run'&&n++<3){S.acc-=S.step;snTick(S)}if(S.acc>S.step)S.acc=S.step*.99}
- S.fa+=dt/280;if(S.shake>0)S.shake=Math.max(0,S.shake-dt/420);
- if(S.parts.length){S.parts.forEach(q=>{q.x+=q.vx*dt/1000;q.y+=q.vy*dt/1000;q.l-=dt/540});S.parts=S.parts.filter(q=>q.l>0)}
- snDraw(S,ts)}
-function snDraw(S,now){const c=S.cv,dpr=Math.min(2,devicePixelRatio||1),w=Math.round(c.clientWidth*dpr);if(!w)return;
- if(c.width!==w){c.width=c.height=w;S.bg=null}const x=S.cx,cs=w/GX;
- if(!S.bg){const o=document.createElement('canvas');o.width=o.height=w;const q=o.getContext('2d');for(let i=0;i<GX;i++)for(let j=0;j<GX;j++){q.fillStyle=(i+j)&1?'#241319':'#1d0f15';q.fillRect(i*cs,j*cs,cs+1,cs+1)}q.lineWidth=cs*.16;q.strokeStyle=S.cfg.wrap?'rgba(74,222,128,.3)':'rgba(248,113,113,.55)';q.strokeRect(q.lineWidth/2,q.lineWidth/2,w-q.lineWidth,w-q.lineWidth);S.bg=o}
- x.setTransform(1,0,0,1,0,0);x.clearRect(0,0,w,w);if(S.shake>0){const s=S.shake*cs*.3;x.translate((Math.random()-.5)*s,(Math.random()-.5)*s)}x.drawImage(S.bg,0,0);
- const t=S.st==='over'?1:Math.min(1,S.acc/S.step),f=S.food,fp=Math.min(1,S.fa),e=1-Math.pow(1-fp,3),fr=cs*.34*(.2+.8*e)*(1+.08*Math.sin(now/170)),fx=(f.x+.5)*cs,fy=(f.y+.5)*cs;
- let g=x.createRadialGradient(fx,fy,0,fx,fy,fr*2.4);g.addColorStop(0,'rgba(255,80,80,.38)');g.addColorStop(1,'rgba(255,80,80,0)');x.fillStyle=g;x.beginPath();x.arc(fx,fy,fr*2.4,0,6.283);x.fill();
- g=x.createRadialGradient(fx-fr*.3,fy-fr*.3,fr*.1,fx,fy,fr);g.addColorStop(0,'#ff8a80');g.addColorStop(.6,'#e53935');g.addColorStop(1,'#b71c1c');x.fillStyle=g;x.beginPath();x.arc(fx,fy,fr,0,6.283);x.fill();
- x.fillStyle='#66bb6a';x.beginPath();x.ellipse(fx+fr*.35,fy-fr*.95,fr*.34,fr*.18,-.6,0,6.283);x.fill();
- S.p.forEach(p=>snBody(x,p,t,cs));
- S.parts.forEach(q=>{x.globalAlpha=Math.max(0,q.l);x.fillStyle=q.c;x.beginPath();x.arc((q.x+.5)*cs,(q.y+.5)*cs,cs*.14*(.4+q.l),0,6.283);x.fill()});x.globalAlpha=1}
-function snBody(x,p,t,cs){const pts=[];
- for(let i=0;i<p.b.length;i++){const c=p.b[i],v=p.pb[i]||p.pb[p.pb.length-1]||c;let px,py;if(Math.abs(c.x-v.x)>1||Math.abs(c.y-v.y)>1){px=c.x;py=c.y}else{px=v.x+(c.x-v.x)*t;py=v.y+(c.y-v.y)*t}pts.push([(px+.5)*cs,(py+.5)*cs])}
- const path=()=>{x.beginPath();let pr=null;pts.forEach(q=>{if(!pr||Math.hypot(q[0]-pr[0],q[1]-pr[1])>cs*1.6)x.moveTo(q[0],q[1]);else x.lineTo(q[0],q[1]);pr=q})};
- x.globalAlpha=p.alive?1:.55;x.lineCap=x.lineJoin='round';
- x.lineWidth=cs*.82;x.strokeStyle=p.dk;path();x.stroke();x.lineWidth=cs*.6;x.strokeStyle=p.col;path();x.stroke();x.lineWidth=cs*.18;x.strokeStyle='rgba(255,255,255,.3)';path();x.stroke();
- const h=pts[0],d=p.dir,hr=cs*.46,px=-d.y,py=d.x;x.fillStyle=p.col;x.beginPath();x.arc(h[0],h[1],hr,0,6.283);x.fill();
- for(const s of[-1,1]){const ex=h[0]+d.x*hr*.35+px*s*hr*.48,ey=h[1]+d.y*hr*.35+py*s*hr*.48;x.fillStyle='#fff';x.beginPath();x.arc(ex,ey,hr*.3,0,6.283);x.fill();x.fillStyle='#111';x.beginPath();x.arc(ex+d.x*hr*.1,ey+d.y*hr*.1,hr*.15,0,6.283);x.fill()}
- x.globalAlpha=1}
-addEventListener('keydown',e=>{const S=GM.sn;if(!S||!$('#gm').classList.contains('on')||GM.scr!=='play')return;const k=e.key,ar={ArrowUp:'u',ArrowDown:'d',ArrowLeft:'l',ArrowRight:'r'},wa={w:'u',s:'d',a:'l',d:'r',W:'u',S:'d',A:'l',D:'r'};
- if(k===' '){e.preventDefault();S.st==='run'?snPause(S):S.st==='pause'?snResume(S):snGo(S);return}
- if(S.m==='duo'){if(ar[k]){e.preventDefault();snDir(S.p[1],SD[ar[k]])}else if(wa[k])snDir(S.p[0],SD[wa[k]])}else if(ar[k]||wa[k]){e.preventDefault();snDir(S.p[0],SD[ar[k]||wa[k]])}});
-document.addEventListener('pointerdown',e=>{const S=GM.sn;if(!S||!e.target.closest)return;const b=e.target.closest('#gm [data-d],#gm [data-p]');
- if(b){e.preventDefault();if(b.dataset.d)snDir(S.p[0],SD[b.dataset.d]);else snTurn(S.p[+b.dataset.p],+b.dataset.t);b.classList.add('hit');setTimeout(()=>b.classList.remove('hit'),120);return}
- if(S.m!=='duo'&&e.target.closest('#gcv')){S.sx=e.clientX;S.sy=e.clientY;S.sw=1}});
-document.addEventListener('pointermove',e=>{const S=GM.sn;if(!S||!S.sw)return;const dx=e.clientX-S.sx,dy=e.clientY-S.sy;if(Math.max(Math.abs(dx),Math.abs(dy))<16)return;snDir(S.p[0],Math.abs(dx)>Math.abs(dy)?(dx>0?SD.r:SD.l):(dy>0?SD.d:SD.u));S.sx=e.clientX;S.sy=e.clientY},{passive:true});
-['pointerup','pointercancel'].forEach(n=>document.addEventListener(n,()=>{if(GM.sn)GM.sn.sw=0}));
-/* ---------- TIC-TAC-TOE ---------- */
-const TTL=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
-const ttWin=b=>{for(const l of TTL)if(b[l[0]]&&b[l[0]]===b[l[1]]&&b[l[0]]===b[l[2]])return{w:b[l[0]],l};return null};
-const ttMark=(v,a)=>`<svg viewBox="0 0 100 100" class="tm ${v==='X'?'x':'o'}${a?' a':''}">${v==='X'?'<path pathLength="1" d="M26 26L74 74"/><path pathLength="1" d="M74 26L26 74"/>':'<circle pathLength="1" cx="50" cy="50" r="27"/>'}</svg>`;
-function ttMm(b,turn,ai,hu,d){const r=ttWin(b);if(r)return r.w===ai?10-d:d-10;if(b.every(Boolean))return 0;let best=turn===ai?-99:99;for(let i=0;i<9;i++)if(!b[i]){b[i]=turn;const s=ttMm(b,turn===ai?hu:ai,ai,hu,d+1);b[i]='';if(turn===ai?s>best:s<best)best=s}return best}
-function ttPick(b,ai,diff){const hu=ai==='X'?'O':'X',free=[];b.forEach((v,i)=>{if(!v)free.push(i)});
- const find=s=>{for(const i of free){b[i]=s;const r=ttWin(b);b[i]='';if(r)return i}return -1},rnd=()=>free[gmRnd(free.length)];
- if(diff==='easy'){if(Math.random()<.3){const w=find(ai);if(w>=0)return w}return rnd()}
- if(diff==='medium'){if(Math.random()<.12)return rnd();let k=find(ai);if(k>=0)return k;k=find(hu);if(k>=0)return k;if(!b[4])return 4;const cr=[0,2,6,8].filter(i=>!b[i]);return cr.length?cr[gmRnd(cr.length)]:rnd()}
- if(free.length===9)return[0,2,4,6,8][gmRnd(5)];let best=-99,bm=[];for(const i of free){b[i]=ai;const s=ttMm(b,hu,ai,hu,1);b[i]='';if(s>best){best=s;bm=[i]}else if(s===best)bm.push(i)}return bm[gmRnd(bm.length)]}
-const ttNm=s=>GM.mode==='cpu'?(s===GM.me?'You':'Computer'):'Player '+s;
-const ttLine=(l,a)=>{const p=k=>[52+98*(k%3),52+98*((k/3)|0)],A1=p(l[0]),B=p(l[2]);return`<line class="${a?'a':''}" pathLength="1" x1="${A1[0]}" y1="${A1[1]}" x2="${B[0]}" y2="${B[1]}"/>`};
-function ttHtml(){const T=GM.tt;
- const cells=T.b.map((v,i)=>`<button class="tc ${v?'f':''} ${T.res&&T.res.l&&T.res.l.includes(i)?'win':''}" data-a="tcell" data-i="${i}" aria-label="Cell ${i+1}">${v?ttMark(v,0):''}</button>`).join('');
- return gmH('Tic-Tac-Toe')+`<div class="gb"><div class="tsc"><div class="tsb x"><small id="tnX">${ttNm('X')} (X)</small><b id="tsX">${T.sc.X}</b></div><div class="tsb"><small>Draw</small><b id="tsD">${T.sc.D}</b></div><div class="tsb o"><small id="tnO">${ttNm('O')} (O)</small><b id="tsO">${T.sc.O}</b></div></div>
- <div class="ttb"><div class="tp x" id="tpX">${ttMark('X',0)}<span>X</span></div><div class="tp o" id="tpO">${ttMark('O',0)}<span>O</span></div></div><div id="tlb"></div>
- <div class="tb">${cells}<svg class="twl" id="twl" viewBox="0 0 300 300">${T.res&&T.res.l?ttLine(T.res.l,0):''}</svg></div><div id="tres"></div></div>`}
-function ttStatus(){const T=GM.tt;if(!T||!$('#tlb'))return;$('#tpX').classList.toggle('on',!T.over&&T.turn==='X');$('#tpO').classList.toggle('on',!T.over&&T.turn==='O');
- const cpu=GM.mode==='cpu';$('#tlb').innerHTML=T.over?'':cpu?(T.turn===GM.me?'Aapki baari':'Computer soch raha hai<span class="dots"><span>.</span><span>.</span><span>.</span></span>'):ttNm(T.turn)+' ki baari'}
-function ttScore(){const T=GM.tt;['X','D','O'].forEach(k=>{const e=$('#ts'+k);if(e&&+e.textContent!==T.sc[k]){e.textContent=T.sc[k];e.classList.remove('pop');void e.offsetWidth;e.classList.add('pop')}})}
-function ttKick(){const T=GM.tt;if(!T)return;ttStatus();if(T.over){return}
- if(GM.mode==='cpu'&&T.turn!==GM.me){T.busy=true;clearTimeout(GM.tm);GM.tm=setTimeout(()=>{if(GM.tt!==T||T.over)return;T.busy=false;ttPlace(ttPick(T.b,T.turn,GM.diff))},450+gmRnd(400))}}
-function ttPlace(i){const T=GM.tt,s=T.turn;T.b[i]=s;const btn=$('#gm .tc[data-i="'+i+'"]');if(btn){btn.classList.add('f');btn.innerHTML=ttMark(s,1)}gmVib(12);const r=ttWin(T.b);
- if(r){T.over=true;T.res={w:s,l:r.l};T.sc[s]++;const sv=$('#twl');if(sv)sv.innerHTML=ttLine(r.l,1);r.l.forEach(k=>{const e=$('#gm .tc[data-i="'+k+'"]');e&&e.classList.add('win')});ttEnd(s)}
- else if(T.b.every(Boolean)){T.over=true;T.res={w:''};T.sc.D++;ttEnd('')}
- else{T.turn=s==='X'?'O':'X';ttKick()}}
-function ttEnd(w){const T=GM.tt,cpu=GM.mode==='cpu',win=w&&(!cpu||w===GM.me),t=!w?'Draw!':cpu?(w===GM.me?'You Win!':'Computer Wins'):'Player '+w+' Wins!';ttScore();ttStatus();if(win)gmVib([30,30,50]);
- setTimeout(()=>{if(GM.tt!==T)return;const r=$('#tres');if(r){r.innerHTML=`<div class="gbx"><b>${t}</b><button class="gpl" data-a="gmnext">Next Round</button><button class="gpl o" data-a="gmmenu">Menu</button></div>`;if(win)gmConfetti(r)}},w?700:350)}
-A.tcell=t=>{const T=GM.tt;if(!T||T.over||T.busy)return;const i=+t.dataset.i;if(T.b[i]||(GM.mode==='cpu'&&T.turn!==GM.me))return;ttPlace(i)};
-A.gmnext=()=>{const T=GM.tt;if(!T)return;T.b=Array(9).fill('');T.over=false;T.res=null;T.busy=false;T.starter=T.starter==='X'?'O':'X';T.turn=T.starter;gmRender(false)};
-
-
-const MT=[[ic('chart'),'#e8eeff','Reports','Sales &amp; Profit','data-a="nav" data-v="reports"',1],[ic('receipt'),'#e6f6ea','All Bills','Search &amp; Share','data-a="nav" data-v="bills"',0],[ic('wallet'),'#fff0dc','Expenses','Rent, Salary, More','data-a="nav" data-v="exp"',1],[ic('sliders'),'#efe9ff','Settings','Shop, GST, Printer','data-a="nav" data-v="settings"',1],[ic('cloud'),'#e3f1fb','Backup &amp; Restore','File · Drive · Restore','data-a="backup"',1],[ic('calc'),'#fff4d6','Cash Tally','Daily Cash Check','data-a="nav" data-v="tally"',1],[ic('share'),'#fde8ee','Share','App · Store · Summary','data-a="sharemenu"',0],[ic('help'),'#e8eeff','Help &amp; Legal','Guide · Terms · Privacy','data-a="helpmenu"',0],[ic('lock'),'#f3e3e8','Lock App','Secure with PIN','data-a="lockn"',0],[ic('game'),'#e6f6ea','Time Pass','Snake &amp; Tic-Tac-Toe','data-a="games"',0]];
+const MT=[[ic('chart'),'#e8eeff','Reports','Sales &amp; Profit','data-a="nav" data-v="reports"',1],[ic('receipt'),'#e6f6ea','All Bills','Search &amp; Share','data-a="nav" data-v="bills"',0],[ic('wallet'),'#fff0dc','Expenses','Rent, Salary, More','data-a="nav" data-v="exp"',1],[ic('sliders'),'#efe9ff','Settings','Shop, GST, Printer','data-a="nav" data-v="settings"',1],[ic('cloud'),'#e3f1fb','Backup &amp; Restore','File · Drive · Restore','data-a="backup"',1],[ic('calc'),'#fff4d6','Cash Tally','Daily Cash Check','data-a="nav" data-v="tally"',1],[ic('share'),'#fde8ee','Share','App · Store · Summary','data-a="sharemenu"',0],[ic('help'),'#e8eeff','Help &amp; Legal','Guide · Terms · Privacy','data-a="helpmenu"',0],[ic('lock'),'#f3e3e8','Lock App','Secure with PIN','data-a="lockn"',0]];
 let IP=null;addEventListener('beforeinstallprompt',e=>{e.preventDefault();IP=e;if(cur==='more')go('more')});addEventListener('appinstalled',()=>{IP=null});
 V.more=()=>{const s=D.shop,t=MT.filter(x=>!(STAFF&&x[5]));if(!STAFF)t.splice(4,0,[ic('user'),'#fff4d6','Plan &amp; Account',planSub(),'data-a="acct"',1]);if(IP)t.push([ic('download'),'#e3f1fb','Install App','Add to Home Screen','data-a="install"',0]);
  return`<div class="wc" data-a="nav" data-v="${STAFF?'home':'settings'}"><div class="wi">${ic('store')}</div><div><b>Welcome Back!</b><span>${esc(s.name||'My Dukan Hisab')} · ${new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'})}</span></div><i>›</i></div>
@@ -1004,13 +750,15 @@ A.backup=()=>{const sn=SNAP;sheet(`<h3>Backup &amp; Account</h3><div class="c" s
 let LH=null;
 const API='https://dukan-hisab-api.bhaisahabhu091.workers.dev';   /* paste your Worker URL here */
 const SELLER='919818082060';                                   /* your WhatsApp number with 91, no + */
-const PRICES={m:69,y:799,l:5999},PN={m:'Monthly',y:'Yearly',l:'Lifetime'},FREE_ITEMS=30,FREE_CUST=10,TRIAL_D=14;
+const PRICES={m:69,y:799,l:5999},PN={m:'Monthly',y:'Yearly',l:'Lifetime'},FREE_ITEMS=100,FREE_CUST=10,TRIAL_D=14;
 let ACC=null,PAY=null;try{ACC=JSON.parse(localStorage.getItem('ds_acct')||'null')}catch{}
 const lsg=k=>{try{return localStorage.getItem(k)}catch{return null}},lss=(k,v)=>{try{v==null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch{}};
 const dsB64=t=>Uint8Array.from(atob(t.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));
 /* time never goes backwards: protects the trial and plan expiry from clock changes */
 const tnow=()=>{const w=Date.now(),m=Math.max(+lsg('ds_mx')||0,PAY?PAY.iat:0),n=Math.max(w,m);if(w>m+6e4)lss('ds_mx',String(w));return n};
-async function acctLoad(){PAY=null;if(!(ACC&&ACC.tok&&ACC.pub))return;try{const [h,p,g]=ACC.tok.split('.');if(h!=='DS1')return;const k=await crypto.subtle.importKey('jwk',ACC.pub,{name:'ECDSA',namedCurve:'P-256'},false,['verify']);if(await crypto.subtle.verify({name:'ECDSA',hash:'SHA-256'},k,dsB64(g),new TextEncoder().encode(p))){const o=JSON.parse(new TextDecoder().decode(dsB64(p)));if(o.pr==='dukan'&&o.em===ACC.email)PAY=o}}catch{}}
+/* LICENSE_PUB: paste the JWK from https://dukan-hisab-api.bhaisahabhu091.workers.dev/pubkey here. When set, only this key is trusted (a key stored on the phone is ignored, so plans cannot be forged). */
+const LICENSE_PUB=null;
+async function acctLoad(){PAY=null;const PK=LICENSE_PUB||(ACC&&ACC.pub);if(!(ACC&&ACC.tok&&PK))return;try{const [h,p,g]=ACC.tok.split('.');if(h!=='DS1')return;const k=await crypto.subtle.importKey('jwk',PK,{name:'ECDSA',namedCurve:'P-256'},false,['verify']);if(await crypto.subtle.verify({name:'ECDSA',hash:'SHA-256'},k,dsB64(g),new TextEncoder().encode(p))){const o=JSON.parse(new TextDecoder().decode(dsB64(p)));if(o.pr==='dukan'&&o.em===ACC.email)PAY=o}}catch{}}
 function plan(){const n=tnow();if(!PAY)return{s:'guest'};if(PAY.pl==='l'||(PAY.pl&&PAY.ex>n))return{s:'pro',pl:PAY.pl,ex:PAY.ex};const e=PAY.ts+TRIAL_D*864e5;if(n<e)return{s:'trial',left:Math.max(1,Math.ceil((e-n)/864e5))};return{s:'free'}}
 const isPro=()=>{const s=plan().s;return s==='pro'||s==='trial'};
 const planSub=()=>{const p=plan();return p.s==='pro'?'Pro · '+PN[p.pl]:p.s==='trial'?'Trial · '+p.left+' day'+(p.left>1?'s':'')+' left':p.s==='free'?'Free plan':'Login · 14-day trial'};
@@ -1020,7 +768,7 @@ const lErr=e=>{const m=e&&e.message||'';return({denied:'Google ne permission nah
 function planSheet(why){const p=plan(),ex=p.s==='pro'&&p.pl!=='l'?' · valid till '+new Date(p.ex).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}):'';
  const st=p.s==='pro'?`Pro plan active (${PN[p.pl]})${ex}`:p.s==='trial'?`Free trial: ${p.left} day${p.left>1?'s':''} left · all Pro features on`:p.s==='free'?`Free plan · ${FREE_ITEMS} items · ${FREE_CUST} Udhaar customers · no Drive backup`:`Not logged in · Free plan limits apply`;
  sheet(`<h3>Plan &amp; Account</h3>${why?`<div class="hero" style="margin-bottom:10px"><b>${esc(why)}</b></div>`:''}
- <div class="c" style="margin-bottom:10px">${ACC?`<div class="mu">Logged in as</div><b style="word-break:break-all">${esc(ACC.email)}</b>`:`<div class="mu">Login with Google to start your 14-day free trial. Your trial is linked to your Google account.</div>`}<div style="margin:8px 0;font-weight:700;color:var(--mr)">${esc(st)}</div>${ACC?`<button class="btn o" data-a="login">Sync plan</button><button class="btn r" data-a="logout">Logout</button>`:`<button class="btn" data-a="login">Login with Google</button>`}</div>
+ <div class="c" style="margin-bottom:10px">${ACC?`<div class="mu">Logged in as</div><b style="word-break:break-all">${esc(ACC.email)}</b>`:`<div class="mu">Login with Google to start your 14-day free trial. Your trial is linked to your Google account.</div>`}<div style="margin:8px 0;font-weight:700;color:var(--mr)">${esc(st)}</div>${ACC?`<button class="btn o" data-a="login">Sync plan</button><button class="btn r" data-a="logout">Logout</button><button class="btn o" data-a="delacct" style="color:var(--rd);border-color:var(--rd)">Delete my account</button>`:`<button class="btn" data-a="login">Login with Google</button>`}</div>
  <div class="sl">Plans</div><div class="pl">${['m','y','l'].map(k=>`<button data-a="buyp" data-p="${k}"${k==='y'?' class="best"':''}><span><b>${PN[k]}</b><small>${k==='m'?'Per month':k==='y'?'Per year · best for shops':'One time · pay once'}</small></span><strong>${R(PRICES[k])}</strong></button>`).join('')}</div>
  <div class="mu" style="margin-bottom:10px"><b>Free:</b> bills, GST, reports, Udhaar, file backup, up to ${FREE_ITEMS} items and ${FREE_CUST} customers.<br><b>Pro:</b> unlimited items and customers, Google Drive backup, 200 common items.</div>
  <button class="btn o" data-a="close">Close</button>`)}
@@ -1033,6 +781,8 @@ A.login=async()=>{if(LB)return toast('Ruko, login chal raha hai…');if(!/^https
  LB=1;const bt=[...document.querySelectorAll('[data-a=login],[data-w=glogin]')];bt.forEach(b=>{b.dataset.t=b.textContent;b.textContent='Ruko…';b.disabled=true});
  try{toast('Google se connect ho raha hai…',3000);const t=await gTok('select_account'),{r,j}=await srv('/auth',{token:t});if(!r.ok||!j.tok)throw new Error(j.error||'server');
   ACC={tok:j.tok,pub:j.pub,email:j.user.email};lss('ds_acct',JSON.stringify(ACC));if(j.now&&j.now>(+lsg('ds_mx')||0))lss('ds_mx',String(j.now));await acctLoad();if(!PAY)throw new Error('bad token');toast('Login ho gaya · '+planSub());if(LH){const h=LH;LH=null;await h(t)}else{closeSheet();if(cur==='home'||cur==='more')go(cur);gAfter(t)}}catch(e){LH=null;toast(lErr(e),4500)}finally{LB=0;bt.forEach(b=>{if(b.isConnected){b.textContent=b.dataset.t||'Login with Google';b.disabled=false}})}};
+A.delacct=()=>ask('Account delete karein? Server se aapka email, trial aur plan record hamesha ke liye hat jayega. Phone ka shop data nahi hatega. Plan bhi khatam ho jayega.','Haan, delete karo',async()=>{if(!ACC)return;if(navigator.onLine===false)return toast('Delete ke liye internet chahiye');
+ try{toast('Google se dobara confirm karo…',3000);const t=await gTok('select_account'),{r,j}=await srv('/delete-account',{token:t});if(!r.ok||!j.ok)throw new Error(j.error||'server');ACC=null;PAY=null;GT='';gDirty=0;clearTimeout(gTm);['ds_acct','ds_gr','ds_gs','ds_gp'].forEach(k=>lss(k,null));closeSheet();toast('Account delete ho gaya',4000);if(cur==='home'||cur==='more')go(cur)}catch(e){toast(lErr(e),4500)}});
 A.logout=()=>ask('Logout from this phone? Your shop data stays safe.','Logout',()=>{ACC=null;PAY=null;GT='';gDirty=0;clearTimeout(gTm);lss('ds_acct',null);lss('ds_gr',null);lss('ds_gs',null);lss('ds_gp',null);closeSheet();toast('Logged out');if(cur==='home'||cur==='more')go(cur)});
 A.buyp=t=>{const k=t.dataset.p;if(!ACC){toast('First login with Google');return A.login()}if(/XXXX/.test(SELLER))return toast('Seller number is not set');const p=plan();if(p.s==='pro'&&p.pl==='l')return toast('You already have the Lifetime plan');
  wa(SELLER,`Hello, I want the ${PN[k]} plan (${R(PRICES[k])}) of My Dukan Hisab.\nMy login email: ${ACC.email}`);toast('Opening WhatsApp… send the message to get your plan')};
