@@ -115,6 +115,35 @@ body{touch-action:manipulation}
 .wq{grid-column:1/-1;display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.wq button{padding:5px 10px;border-radius:14px;border:1px solid var(--go,#d9a21b);background:#fff8e6;font-size:12px;font-weight:700;color:var(--mr)}
 .ql{color:var(--mr);font-weight:700}
 .stg .c{padding:10px 12px;margin-bottom:8px}.stg .c>h3{margin:0;font-size:15px;display:flex;justify-content:flex-start;gap:8px;text-align:left;align-items:center;cursor:pointer}.stg .c.fold>h3:after{margin-left:auto;content:"›";font-size:20px;transform:rotate(90deg);transition:transform .15s}.stg .c.fold.open>h3:after{transform:rotate(-90deg)}.stg .c.fold:not(.open)>*:not(h3){display:none}.stg .c.fold.open>h3{margin-bottom:8px}.stg .in{height:42px;font-size:15px}.stg label{font-size:12px;margin-top:8px}.stg .btn{height:44px;font-size:15px}
+
+/* ===== v25 professional skin ===== */
+@font-face{font-family:Inter;font-weight:400;font-display:swap;src:url(fonts/inter-Regular.woff) format('woff')}
+@font-face{font-family:Inter;font-weight:600;font-display:swap;src:url(fonts/inter-SemiBold.woff) format('woff')}
+@font-face{font-family:Inter;font-weight:700;font-display:swap;src:url(fonts/inter-Bold.woff) format('woff')}
+:root{--bg:#f6f4f1;--bd:#e7e2db;--tx:#1f1a16;--mu:#6f665e;--mr:#6a0f2b;--mr2:#6a0f2b;--sh:0 1px 2px rgba(20,16,12,.06),0 2px 6px rgba(20,16,12,.04);--pt:none}
+body{font-family:Inter,system-ui,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;font-feature-settings:'tnum' 1,'kern' 1;-webkit-font-smoothing:antialiased}
+#hd{background:var(--mr)!important;padding-bottom:14px}
+.ttl b,h3,.wlh h1,.wlh p{font-family:inherit!important}.ttl b{font-weight:700;font-size:18px;letter-spacing:-.2px}.ttl small{color:#f3d3dc}
+.tri{display:none}
+#hd .ib{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22)}
+h3{font-size:15px;font-weight:600;color:var(--tx);letter-spacing:-.1px}h3::before{display:none}
+.c{border-radius:14px;box-shadow:var(--sh)}
+.btn{background:var(--sa);border-radius:12px;height:48px;font-weight:600;font-size:15px;letter-spacing:.1px}.btn.big{height:54px;font-size:16px}.btn.o{background:#fff}.btn.g{background:var(--gr)}.btn.r{background:#fff}
+.btn[disabled]{opacity:.6;pointer-events:none}
+.in{border-radius:10px;height:46px}.in:focus{box-shadow:0 0 0 3px rgba(232,115,12,.15)}
+.hero{background:#fff;border:1px solid var(--bd);border-left:4px solid var(--sa);border-radius:12px}.hero::after{display:none}.hero b{color:var(--tx)}
+#nav{border-top:1px solid var(--bd);box-shadow:0 -2px 12px rgba(20,16,12,.05)}
+#nav .mid .ic{background:var(--sa);border:3px solid #fff;box-shadow:0 4px 12px rgba(232,115,12,.4)}
+#nav button.on::before{background:var(--sa)}#nav button.on{color:var(--sa)}
+#sc{border-top:0;border-radius:20px 20px 0 0}#sc::before{content:"";display:block;width:40px;height:4px;border-radius:2px;background:#d8d2ca;margin:-8px auto 12px}
+.mn button,.qa button,.chip,.ct{box-shadow:none}.mn button{box-shadow:var(--sh)}
+.st b{font-weight:700;letter-spacing:-.3px}
+.chip{background:#fff}.chip.on,.pay .chip.on{background:var(--sa)}
+.bg{font-weight:600}
+#wl{background:linear-gradient(180deg,var(--mr) 0,var(--mr) 270px,var(--bg) 270px)}
+.wlh h1{color:#fff}
+#tst{z-index:60!important}
+#upd{position:fixed;left:12px;right:12px;top:max(12px,env(safe-area-inset-top));z-index:70;max-width:560px;margin:auto;background:#1f1a16;color:#fff;border-radius:12px;padding:10px 12px 10px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 24px rgba(0,0,0,.35);font-size:14px}#upd span{flex:1}#upd button{background:var(--sa);color:#fff;border-radius:9px;padding:9px 14px;font-weight:600}
 </style><style>
 #hd{box-shadow:0 4px 14px rgba(122,18,48,.28)}
 .c{border-radius:18px;transition:box-shadow .2s,transform .15s}.c:active{transform:scale(.995)}
@@ -582,7 +611,7 @@ function showBill(id,fresh){const b=fb(id);if(!b)return;sheet(`${fresh?'<h3>Bill
 function btxt(b){const s=D.shop;return `*${s.name||'Bill'}*\n${tr('Bill')} ${bno(b)} | ${fd(b.ts)} ${ft(b.ts)}\n----------------\n${b.items.map(i=>`${i.name} — ${qLbl(i.qty,i.unit)} × ${R(i.price)}${rpu(i)} = ${R(i.price*i.qty)}`).join('\n')}\n----------------\n${b.disc?tr('Discount')+': -'+R(b.disc)+'\n':''}*${tr('Total')}: ${R(b.total)}*\n${dueOf(b)>0?tr('Balance due')+': '+R(dueOf(b))+'\n':''}${s.upi?'Pay by UPI: '+s.upi+'\n':''}${s.footer||''}`}
 
 /* ===== BILL AS IMAGE (shared instead of plain text) ===== */
-function billCv(b){const s=D.shop,c=D.cust.find(x=>x.id===b.cust),du=dueOf(b),W=600,FB='"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif',FT='Georgia,"Noto Serif",serif',m=n=>'₹'+N.format(Math.round((+n||0)*100)/100);
+function billCv(b){const s=D.shop,c=D.cust.find(x=>x.id===b.cust),du=dueOf(b),W=600,FB='Inter,"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif',FT=FB,m=n=>'₹'+N.format(Math.round((+n||0)*100)/100);
  const cv=document.createElement('canvas');cv.width=W*2;cv.height=3200*2;const x=cv.getContext('2d');x.scale(2,2);x.fillStyle='#fff7e8';x.fillRect(0,0,W,3200);
  const g=x.createLinearGradient(0,0,W,150);g.addColorStop(0,'#7a1230');g.addColorStop(.6,'#b3261e');g.addColorStop(1,'#e8730c');x.fillStyle=g;x.fillRect(0,0,W,150);
  x.fillStyle='rgba(255,210,122,.15)';for(let i=0;i<28;i++)for(let j=0;j<6;j++){const px=i*22+(j%2)*11,py=j*26+14;x.beginPath();x.moveTo(px,py-7);x.lineTo(px+7,py);x.lineTo(px,py+7);x.lineTo(px-7,py);x.fill()}
@@ -607,7 +636,7 @@ function billCv(b){const s=D.shop,c=D.cust.find(x=>x.id===b.cust),du=dueOf(b),W=
  T('Made with My Dukan Hisab  ·  © '+new Date().getFullYear()+' My Dukan Hisab',W/2,Y+28,'600 13px '+FB,'#fff','center');Y+=46;
  const o=document.createElement('canvas');o.width=W*2;o.height=Y*2;o.getContext('2d').drawImage(cv,0,0,W*2,Y*2,0,0,W*2,Y*2);return o}
 function rr0(x,X,Y,W,H,r){x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+W,Y,X+W,Y+H,r);x.arcTo(X+W,Y+H,X,Y+H,r);x.arcTo(X,Y+H,X,Y,r);x.arcTo(X,Y,X+W,Y,r);x.closePath()}
-async function billShare(b,p){try{toast('Making bill image…',2000);await new Promise(r=>setTimeout(r,30));const cv=billCv(b),bl=await new Promise(r=>cv.toBlob(r,'image/png')),nm='bill-'+String(bno(b)).replace(/[^\w-]/g,'')+'.png',f=new File([bl],nm,{type:'image/png'});
+async function billShare(b,p){try{toast('Bill ki image ban rahi hai…',2000);await fl();const cv=billCv(b),bl=await new Promise(r=>cv.toBlob(r,'image/png')),nm='bill-'+String(bno(b)).replace(/[^\w-]/g,'')+'.png',f=new File([bl],nm,{type:'image/png'});
  if(navigator.canShare&&navigator.canShare({files:[f]})){try{await navigator.share({files:[f],title:(D.shop.name||'Bill')+' · Bill '+bno(b)});return}catch(e){if(e&&e.name==='AbortError')return}}
  const a=document.createElement('a');a.href=URL.createObjectURL(bl);a.download=nm;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4e4);toast('Bill image saved · attach it in WhatsApp');if(p)setTimeout(()=>wa(p,(D.shop.name||'Bill')+' · Bill '+bno(b)+' (image attached)'),900)}catch(e){toast('Could not create the bill image');wa(p,btxt(b))}}
 A.wabill=t=>{const b=fb(+t.dataset.id),p=($('#wa-p')||{}).value||'';if(p&&p.replace(/\D/g,'').length<10)return toast('Enter a valid 10-digit number');billShare(b,p)};
@@ -848,7 +877,7 @@ A.csvb=()=>dl('bills.csv',csv([['Bill','Date','Customer','Subtotal','Discount','
 A.csvi=()=>dl('items.csv',csv([['Name','Price','Cost','Stock','Unit','GST','Barcode'],...D.items.map(i=>[i.name,i.price,i.cost,i.stock,i.unit,i.gst,i.bc])]),'text/csv');
 /* ===== COLOURFUL REPORTS: tips + PDF export (works offline, no library) ===== */
 const BC2=[['#f59e2b','#e8730c'],['#34c759','#138808'],['#d9534f','#7a1230'],['#4d94ff','#1f6feb'],['#ffd166','#d9a21b'],['#b46be0','#8e44ad'],['#3ed6b5','#16a085']],PAL=['#e8730c','#138808','#7a1230','#1f6feb','#d9a21b','#8e44ad','#16a085','#d32f2f'];
-const FT='Georgia,"Noto Serif","Times New Roman",serif',FB='"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif',FN='"Trebuchet MS","Roboto Condensed",Roboto,Arial,sans-serif',FC='"Brush Script MT","Dancing Script","Segoe Script",cursive';
+const FB='Inter,"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif',FT=FB,FN=FB,FC='"Brush Script MT","Dancing Script","Segoe Script",cursive';
 const RPL={today:'Today','7':'Last 7 days','30':'Last 30 days',month:'This month',all:'All saved bills'};
 function repData(){const T=day0(),mo=new Date();mo.setDate(1);const from={today:T,'7':T-6*864e5,'30':T-29*864e5,month:day0(+mo),all:0}[rp],ALL=allB(),B=ALL.filter(b=>b.ts>=from),E=D.exp.filter(e=>e.ts>=from),sales=sum(B,'total'),pr=sum(B,bprofit),ex=sum(E,'amt'),m={};
  B.forEach(b=>b.items.forEach(i=>{const q=m[i.name]=m[i.name]||{q:0,a:0};q.q+=i.qty;q.a+=i.price*i.qty}));const top=Object.entries(m).sort((a,b)=>b[1].a-a[1].a).slice(0,8),pm={};B.forEach(b=>pm[b.pay]=(pm[b.pay]||0)+b.paid);
@@ -927,12 +956,13 @@ function mkPdf(pages){const E=s=>new TextEncoder().encode(s),parts=[],off=[];let
  pages.forEach((p,i)=>{const pg=3+i*3,ct=pg+1,im=pg+2,cs='q 595 0 0 842 0 0 cm /I Do Q';obj(pg,`<</Type/Page/Parent 2 0 R/MediaBox[0 0 595 842]/Resources<</XObject<</I ${im} 0 R>>>>/Contents ${ct} 0 R>>`);obj(ct,`<</Length ${cs.length}>>\nstream\n${cs}\nendstream`);
   off[im]=len;push(E(`${im} 0 obj\n<</Type/XObject/Subtype/Image/Width ${p.w}/Height ${p.h}/ColorSpace/DeviceRGB/BitsPerComponent 8/Filter/DCTDecode/Length ${p.d.length}>>\nstream\n`));push(p.d);push(E('\nendstream\nendobj\n'))});
  const xr=len,T=3+N*3;let x='xref\n0 '+T+'\n0000000000 65535 f \n';for(let i=1;i<T;i++)x+=String(off[i]).padStart(10,'0')+' 00000 n \n';x+='trailer\n<</Size '+T+'/Root 1 0 R>>\nstartxref\n'+xr+'\n%%EOF';push(E(x));return new Blob(parts,{type:'application/pdf'})}
-async function outPdf(cv,name){toast('Preparing your PDF…',3000);await new Promise(r=>setTimeout(r,80));const imgs=cv.map(c=>({d:bk64d(c.toDataURL('image/jpeg',.9).split(',')[1]),w:c.width,h:c.height})),blob=mkPdf(imgs),f=new File([blob],name,{type:'application/pdf'});
+const fl=()=>document.fonts&&document.fonts.load?Promise.all([400,600,700].map(w=>document.fonts.load(w+' 14px Inter'))).catch(()=>{}):0;
+async function outPdf(cv,name){toast('PDF ban rahi hai…',3000);await new Promise(r=>setTimeout(r,80));const imgs=cv.map(c=>({d:bk64d(c.toDataURL('image/jpeg',.9).split(',')[1]),w:c.width,h:c.height})),blob=mkPdf(imgs),f=new File([blob],name,{type:'application/pdf'});
  if(navigator.canShare&&navigator.canShare({files:[f]})){try{await navigator.share({files:[f],title:name});return}catch(e){if(e&&e.name==='AbortError')return}}
  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4e4);toast('PDF saved to your downloads')}
 const stamp=()=>new Date().toISOString().slice(0,10);
-A.pdfrep=async()=>{try{const d=repData();await outPdf([pgSummary(d,3),pgItems(d,3),pgTips(d,3)],'dukan-report-'+stamp()+'.pdf')}catch(e){toast('Could not create the PDF · try again')}};
-A.pdfbills=async()=>{try{const d=repData(),L=d.B.slice().sort((a,b)=>b.ts-a.ts).slice(0,400);if(!L.length)return toast('No bills in this period');const per=38,parts=Math.ceil(L.length/per),tot={s:sum(L,'total'),p:sum(L,'paid'),d:sum(L,b=>Math.max(0,dueOf(b)))},cv=[];for(let i=0;i<parts;i++)cv.push(pgBills(L.slice(i*per,(i+1)*per),tot,i+1,parts,per));await outPdf(cv,'dukan-bills-'+stamp()+'.pdf')}catch(e){toast('Could not create the PDF · try again')}};
+A.pdfrep=async()=>{try{await fl();const d=repData();await outPdf([pgSummary(d,3),pgItems(d,3),pgTips(d,3)],'dukan-report-'+stamp()+'.pdf')}catch(e){toast('Could not create the PDF · try again')}};
+A.pdfbills=async()=>{try{await fl();const d=repData(),L=d.B.slice().sort((a,b)=>b.ts-a.ts).slice(0,400);if(!L.length)return toast('No bills in this period');const per=38,parts=Math.ceil(L.length/per),tot={s:sum(L,'total'),p:sum(L,'paid'),d:sum(L,b=>Math.max(0,dueOf(b)))},cv=[];for(let i=0;i<parts;i++)cv.push(pgBills(L.slice(i*per,(i+1)*per),tot,i+1,parts,per));await outPdf(cv,'dukan-bills-'+stamp()+'.pdf')}catch(e){toast('Could not create the PDF · try again')}};
 A.sugg=()=>{if(/XXXX/.test(SELLER))return toast('Support number is not set');wa(SELLER,'Hello, my suggestion for My Dukan Hisab:\n')};
 A.expm=()=>sheet(`<h3>Export</h3><div class="mu">Colourful reports you can share on WhatsApp or print.</div><button class="btn" data-a="pdfrep">Report (PDF) · charts &amp; tips</button><button class="btn o" data-a="pdfbills">Bills statement (PDF)</button><div class="sl">For Excel</div><button class="btn o" data-a="csvb">Bills (CSV)</button><button class="btn o" data-a="csvi">Items (CSV)</button><button class="btn o" data-a="close">Close</button>`);
 
@@ -986,7 +1016,7 @@ const isPro=()=>{const s=plan().s;return s==='pro'||s==='trial'};
 const planSub=()=>{const p=plan();return p.s==='pro'?'Pro · '+PN[p.pl]:p.s==='trial'?'Trial · '+p.left+' day'+(p.left>1?'s':'')+' left':p.s==='free'?'Free plan':'Login · 14-day trial'};
 const canItem=()=>isPro()||D.items.length<FREE_ITEMS||(planSheet('Free plan allows '+FREE_ITEMS+' items. Go Pro for unlimited items.'),false);
 const canCust=()=>isPro()||D.cust.length<FREE_CUST||(planSheet('Free plan allows '+FREE_CUST+' Udhaar customers. Go Pro for unlimited customers.'),false);
-const lErr=e=>{const m=e&&e.message||'';return({denied:'Google access was not granted',offline:'Could not connect to the internet or Google',cid:'Google login is not set up yet',google_rejected:'Google sign-in expired · please try again',wrong_client:'Login setup mismatch · contact support',email_verified:'Please use a Google account with a verified email',email_not_verified:'Please use a Google account with a verified email',server_not_configured:'Server is not ready yet',google_unreachable:'Server could not reach Google · try again'})[m]||'Login failed ('+m+') · try again'};
+const lErr=e=>{const m=e&&e.message||'';return({denied:'Google ne permission nahi di · login mein "Allow" dabana zaroori hai',popup:'Popup block ho gaya · browser mein popup allow karke dobara try karo',timeout:'Bahut der lag gayi · internet check karke dobara try karo',offline:'Internet nahi hai, ya Google tak nahi pahunch pa raha',server:'Server se connection nahi ho paya · thodi der baad try karo',cid:'Google login abhi set nahi hai',google_rejected:'Google ka session expire ho gaya · dobara try karo',wrong_client:'Login setup mein gadbad · support se baat karo',email_verified:'Verified email wala Google account use karo',email_not_verified:'Verified email wala Google account use karo',server_not_configured:'Server abhi taiyaar nahi hai · baad mein try karo',google_unreachable:'Server Google tak nahi pahunch paya · dobara try karo'})[m]||'Login nahi ho paya ('+m+') · dobara try karo'};
 function planSheet(why){const p=plan(),ex=p.s==='pro'&&p.pl!=='l'?' · valid till '+new Date(p.ex).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}):'';
  const st=p.s==='pro'?`Pro plan active (${PN[p.pl]})${ex}`:p.s==='trial'?`Free trial: ${p.left} day${p.left>1?'s':''} left · all Pro features on`:p.s==='free'?`Free plan · ${FREE_ITEMS} items · ${FREE_CUST} Udhaar customers · no Drive backup`:`Not logged in · Free plan limits apply`;
  sheet(`<h3>Plan &amp; Account</h3>${why?`<div class="hero" style="margin-bottom:10px"><b>${esc(why)}</b></div>`:''}
@@ -995,9 +1025,14 @@ function planSheet(why){const p=plan(),ex=p.s==='pro'&&p.pl!=='l'?' · valid til
  <div class="mu" style="margin-bottom:10px"><b>Free:</b> bills, GST, reports, Udhaar, file backup, up to ${FREE_ITEMS} items and ${FREE_CUST} customers.<br><b>Pro:</b> unlimited items and customers, Google Drive backup, 200 common items.</div>
  <button class="btn o" data-a="close">Close</button>`)}
 A.acct=()=>planSheet();
-A.login=async()=>{if(!/^https:\/\//.test(API)||/YOUR-NAME/.test(API))return toast('Server is not set up yet');if(navigator.onLine===false)return toast('Internet is needed to login');
- try{toast('Connecting to Google…',3000);const t=await gTok('select_account'),r=await fetch(API+'/auth',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({token:t}),referrerPolicy:'no-referrer',credentials:'omit'});let j={};try{j=await r.json()}catch{}if(!r.ok||!j.tok)throw new Error(j.error||'server');
-  ACC={tok:j.tok,pub:j.pub,email:j.user.email};lss('ds_acct',JSON.stringify(ACC));if(j.now&&j.now>(+lsg('ds_mx')||0))lss('ds_mx',String(j.now));await acctLoad();if(!PAY)throw new Error('bad token');toast('Logged in · '+planSub());if(LH){const h=LH;LH=null;await h(t)}else{closeSheet();if(cur==='home'||cur==='more')go(cur);gAfter(t)}}catch(e){LH=null;toast(lErr(e))}};
+let LB=0;
+A.cplink=()=>{const u=location.href.split('#')[0];(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(()=>toast('Link copy ho gaya · Chrome mein paste karke kholo'),()=>toast(u,6000))};
+A.login=async()=>{if(LB)return toast('Ruko, login chal raha hai…');if(!/^https:\/\//.test(API)||/YOUR-NAME/.test(API))return toast('Server abhi set nahi hai');
+ if(IAB){if($('#wl')&&!$('#wl').classList.contains('hide'))return toast('Google login WhatsApp/Instagram ke andar nahi chalta · link Chrome mein kholo',5000);return sheet(`<h3>Chrome mein kholiye</h3><div class="mu">Google login WhatsApp ya Instagram ke andar nahi chalta. Is link ko Chrome (ya apne browser) mein kholkar login karo. Aapka data safe hai.</div><button class="btn" data-a="cplink">Link copy karo</button><button class="btn o" data-a="close">Band karo</button>`)}
+ if(navigator.onLine===false)return toast('Login ke liye internet chahiye');
+ LB=1;const bt=[...document.querySelectorAll('[data-a=login],[data-w=glogin]')];bt.forEach(b=>{b.dataset.t=b.textContent;b.textContent='Ruko…';b.disabled=true});
+ try{toast('Google se connect ho raha hai…',3000);const t=await gTok('select_account'),{r,j}=await srv('/auth',{token:t});if(!r.ok||!j.tok)throw new Error(j.error||'server');
+  ACC={tok:j.tok,pub:j.pub,email:j.user.email};lss('ds_acct',JSON.stringify(ACC));if(j.now&&j.now>(+lsg('ds_mx')||0))lss('ds_mx',String(j.now));await acctLoad();if(!PAY)throw new Error('bad token');toast('Login ho gaya · '+planSub());if(LH){const h=LH;LH=null;await h(t)}else{closeSheet();if(cur==='home'||cur==='more')go(cur);gAfter(t)}}catch(e){LH=null;toast(lErr(e),4500)}finally{LB=0;bt.forEach(b=>{if(b.isConnected){b.textContent=b.dataset.t||'Login with Google';b.disabled=false}})}};
 A.logout=()=>ask('Logout from this phone? Your shop data stays safe.','Logout',()=>{ACC=null;PAY=null;GT='';gDirty=0;clearTimeout(gTm);lss('ds_acct',null);lss('ds_gr',null);lss('ds_gs',null);lss('ds_gp',null);closeSheet();toast('Logged out');if(cur==='home'||cur==='more')go(cur)});
 A.buyp=t=>{const k=t.dataset.p;if(!ACC){toast('First login with Google');return A.login()}if(/XXXX/.test(SELLER))return toast('Seller number is not set');const p=plan();if(p.s==='pro'&&p.pl==='l')return toast('You already have the Lifetime plan');
  wa(SELLER,`Hello, I want the ${PN[k]} plan (${R(PRICES[k])}) of My Dukan Hisab.\nMy login email: ${ACC.email}`);toast('Opening WhatsApp… send the message to get your plan')};
@@ -1010,10 +1045,14 @@ const GCID='250697330645-fl4kgsh0dlrjff8ooi7cpabmpfaoobah.apps.googleusercontent
 const GOK=/^[\w.-]{10,120}\.apps\.googleusercontent\.com$/,gCid=()=>GOK.test(GCID)&&!GCID.startsWith('PASTE_')?GCID:(D.shop.gcid||'');
 const GD='https://www.googleapis.com/',GN='my-dukan-hisab-backup.json',GL='dukaan-saathi-backup.json';
 let GT='',GTx=0;
-function gTok(pr){return new Promise((res,rej)=>{if(!pr&&GT&&Date.now()<GTx)return res(GT);const cid=gCid();if(!cid)return rej(new Error('cid'));const go2=()=>{try{google.accounts.oauth2.initTokenClient({client_id:cid,scope:'openid email profile https://www.googleapis.com/auth/drive.file',callback:r=>{if(r.access_token){GT=r.access_token;GTx=Date.now()+(((+r.expires_in)||3600)-120)*1000;res(GT)}else rej(new Error('denied'))},error_callback:()=>rej(new Error('denied'))}).requestAccessToken({prompt:pr||''})}catch{rej(new Error('offline'))}};if(window.google&&google.accounts&&google.accounts.oauth2)return go2();const sc=document.createElement('script');sc.src='https://accounts.google.com/gsi/client';sc.onload=go2;sc.onerror=()=>rej(new Error('offline'));document.head.appendChild(sc)})}
+function gTok(pr){return new Promise((res,rej)=>{if(!pr&&GT&&Date.now()<GTx)return res(GT);const cid=gCid();if(!cid)return rej(new Error('cid'));let st,fin=0;const to=setTimeout(()=>done(new Error('timeout')),pr==='none'?15000:150000),done=(e,v)=>{if(fin)return;fin=1;clearTimeout(to);clearTimeout(st);e?rej(e):res(v)};
+ const go2=()=>{clearTimeout(st);try{google.accounts.oauth2.initTokenClient({client_id:cid,scope:'openid email profile https://www.googleapis.com/auth/drive.file',callback:r=>{if(r.access_token){GT=r.access_token;GTx=Date.now()+(((+r.expires_in)||3600)-120)*1000;done(0,GT)}else done(new Error('denied'))},error_callback:e=>done(new Error(e&&e.type==='popup_failed_to_open'?'popup':'denied'))}).requestAccessToken({prompt:pr||''})}catch{done(new Error('offline'))}};
+ if(window.google&&google.accounts&&google.accounts.oauth2)return go2();const sc=document.createElement('script');sc.src='https://accounts.google.com/gsi/client';sc.onload=go2;sc.onerror=()=>done(new Error('offline'));st=setTimeout(()=>done(new Error('offline')),15000);document.head.appendChild(sc)})}
+const IAB=/FBAN|FBAV|Instagram|MicroMessenger|Snapchat|Line\/|; wv\)/i.test(navigator.userAgent||'');
+async function srv(path,body){let last;for(let i=0;i<2;i++){const ac=new AbortController(),tm=setTimeout(()=>ac.abort(),15000);try{const r=await fetch(API+path,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body),referrerPolicy:'no-referrer',credentials:'omit',signal:ac.signal});clearTimeout(tm);let j={};try{j=await r.json()}catch{}if(r.status>=500&&i===0){await new Promise(z=>setTimeout(z,900));continue}return{r,j}}catch(e){clearTimeout(tm);last=e;if(i===0)await new Promise(z=>setTimeout(z,900))}}throw new Error('server')}
 async function gApi(t,u,o={}){const r=await fetch(u,{...o,headers:{Authorization:'Bearer '+t,...(o.headers||{})},referrerPolicy:'no-referrer',credentials:'omit'});if(!r.ok)throw new Error('drive'+r.status);return r}
 async function gFind(t){const q=n=>gApi(t,GD+'drive/v3/files?spaces=drive&fields=files(id)&orderBy=modifiedTime%20desc&q='+encodeURIComponent("name='"+n+"' and trashed=false")).then(r=>r.json()).then(j=>(j.files||[])[0]);return(await q(GN))||(await q(GL))}
-const gErr=e=>{const m=e&&e.message||'';return m==='cid'?'Google Drive is not set up yet':m==='offline'?'Could not connect to the internet or Google':m==='denied'?'Google access was not granted':'Drive error ('+m+') · please sign in again'};
+const gErr=e=>{const m=e&&e.message||'';return m==='cid'?'Google Drive abhi set nahi hai':m==='offline'?'Internet nahi hai, ya Google tak nahi pahunch pa raha':m==='denied'?'Google ne permission nahi di':m==='popup'?'Popup block ho gaya · allow karke dobara try karo':m==='timeout'?'Bahut der lag gayi · dobara try karo':/^drive40[13]$/.test(m)?'Drive ka access expire ho gaya · dobara login karo':'Drive error ('+m+') · dobara try karo'};
 /* ===== GOOGLE DRIVE AUTO-SAVE (starts after login; runs quietly in the background) ===== */
 let gDirty=0,gTm,gBusy=0;
 const gLast=()=>{try{return+lsg('ds_gs')||0}catch{return 0}},gRdy=()=>lsg('ds_gr')==='1';
@@ -1229,7 +1268,7 @@ A.rosend=()=>{const p=($('#ro-p').value||'').trim();if(p&&p.replace(/\D/g,'').le
  const L=RL.slice(0,60).map((x,k)=>({i:x.i,q:num($('#ro'+k).value)})).filter(x=>x.q>0);if(!L.length)return toast('No quantity entered');
  D.shop.dist=ph(p);save();
  wa(p,`*Stock Order* — ${D.shop.name||'Store'}\nDate: ${new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})}\n\n${L.map((x,k)=>`${k+1}. ${x.i.name} — *${+x.q.toFixed(2)} ${x.i.unit}* (in stock: ${x.i.stock})`).join('\n')}\n\nKindly send at the earliest. Thank you.\n${D.shop.phone?'Phone: '+D.shop.phone:''}`.trim())};
-if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)){const reg=()=>navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(()=>{});document.readyState==='complete'?reg():addEventListener('load',reg)}
+if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)){const hadCtl=!!navigator.serviceWorker.controller;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(!hadCtl||$('#upd'))return;const u=document.createElement('div');u.id='upd';u.innerHTML='<span>Naya version taiyaar hai</span><button>Update karo</button>';u.querySelector('button').onclick=()=>{try{flush()}catch{}setTimeout(()=>location.reload(),150)};document.body.appendChild(u)});const reg=()=>navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(()=>{});document.readyState==='complete'?reg():addEventListener('load',reg)}
 /* ===== SCREEN WAKE LOCK (billing / scanner) ===== */
 let WL=null,wlBusy=false,wlAct=Date.now();
 ['pointerdown','keydown','input'].forEach(e=>addEventListener(e,()=>{wlAct=Date.now()},{passive:true,capture:true}));
@@ -1285,12 +1324,12 @@ function wlView(v){const w=$('#wl');w.classList.remove('hide');if(v!=='tc'&&wlS)
  <label>Your name</label><input id="w-o" class="in" maxlength="40" autocomplete="off" placeholder="e.g. Rajesh Sharma" value="${esc(wlS.o)}">
  <label>Mobile number (WhatsApp)</label><input id="w-p" class="in" inputmode="tel" maxlength="13" autocomplete="off" placeholder="10-digit number" value="${esc(wlS.p)}">
  <button class="btn big" id="w-go" data-w="go">Continue</button>${tcn}</div>`;return}
- w.innerHTML=`${hd}<div class="c wlc"><h3>Welcome</h3><div class="mu">Login with Google and your shop data is saved to your Google Drive automatically. Your 14-day free trial starts. Got a new phone? Login and everything comes back.</div><button class="btn big" data-w="glogin">Login with Google</button><div class="mu" style="text-align:center;margin:12px 0 4px">or</div><button class="btn o" data-w="nologin">Continue without login</button>${tcn}</div>`}
+ w.innerHTML=`${hd}<div class="c wlc"><h3>Welcome</h3><div class="mu">Login with Google and your shop data is saved to your Google Drive automatically. Your 14-day free trial starts. Got a new phone? Login and everything comes back.</div>${IAB?`<div class="hero" style="margin-top:10px"><b>Aap WhatsApp/Instagram ke andar ho.</b><div class="mu">Google login yahan nahi chalega. Link copy karke Chrome mein kholo, ya neeche "Continue without login" dabao.</div><button class="btn o" data-w="cplink">Link copy karo</button></div>`:''}<button class="btn big" data-w="glogin">Login with Google</button><div class="mu" style="text-align:center;margin:12px 0 4px">or</div><button class="btn o" data-w="nologin">Continue without login</button>${tcn}</div>`}
 async function wlAfter(t){try{const f=await gFind(t);if(f){const o=JSON.parse(await(await gApi(t,GD+'drive/v3/files/'+f.id+'?alt=media')).text());if(o&&!o._enc&&Array.isArray(o.items)&&Array.isArray(o.bills)){ARCH=saneB(o._arch);D=sane(o);D.shop.tc=TCV;D.shop.tcAt=D.shop.tcAt||Date.now();D.seen=1;BLOCK=false;lss('ds_gr','1');saveArch();flush();const w=$('#wl');w.classList.add('hide');w.innerHTML='';wlS=null;go('home');toast('Welcome back! Your data is ready');return}}}catch{}
  lss('ds_gr','1');wlView('form')}
 function wlClick(e){const t=e.target.closest('[data-w]'),a=t&&t.dataset.w;
  if(!t){const k=e.target.closest('.wlk');if(k&&e.target.tagName!=='INPUT'){const c=$('#w-c');c.checked=!c.checked;wlS.c=c.checked;$('#w-go').disabled=!c.checked}return}
- if(a==='tc')wlView('tc');else if(a==='back')wlView(wlS&&wlS.v||'home');else if(a==='glogin'){LH=wlAfter;A.login()}else if(a==='nologin')wlView('form');
+ if(a==='tc')wlView('tc');else if(a==='back')wlView(wlS&&wlS.v||'home');else if(a==='cplink')A.cplink();else if(a==='glogin'){LH=wlAfter;A.login()}else if(a==='nologin')wlView('form');
  else if(a==='go'){const n=txt(wlS.n,60),o=txt(wlS.o,40),p=ph(wlS.p);
   if(!n)return toast('Please enter your shop name');if(wlS.p&&p.replace(/\D/g,'').length<10)return toast('Enter a valid mobile number');
   Object.assign(D.shop,{name:n,owner:o,phone:p,tc:TCV,tcAt:Date.now()});save();const w=$('#wl');w.classList.add('hide');w.innerHTML='';wlS=null;go('home');toast('Welcome!')}}
