@@ -116,9 +116,9 @@ body{touch-action:manipulation}
 .stg .c{padding:10px 12px;margin-bottom:8px}.stg .c>h3{margin:0;font-size:15px;display:flex;justify-content:flex-start;gap:8px;text-align:left;align-items:center;cursor:pointer}.stg .c.fold>h3:after{margin-left:auto;content:"›";font-size:20px;transform:rotate(90deg);transition:transform .15s}.stg .c.fold.open>h3:after{transform:rotate(-90deg)}.stg .c.fold:not(.open)>*:not(h3){display:none}.stg .c.fold.open>h3{margin-bottom:8px}.stg .in{height:42px;font-size:15px}.stg label{font-size:12px;margin-top:8px}.stg .btn{height:44px;font-size:15px}
 
 /* ===== v25 professional skin ===== */
-@font-face{font-family:Inter;font-weight:400;font-display:swap;src:url(fonts/inter-Regular.woff) format('woff')}
-@font-face{font-family:Inter;font-weight:600;font-display:swap;src:url(fonts/inter-SemiBold.woff) format('woff')}
-@font-face{font-family:Inter;font-weight:700;font-display:swap;src:url(fonts/inter-Bold.woff) format('woff')}
+@font-face{font-family:Inter;font-weight:400;font-display:swap;src:url(inter-Regular.woff) format('woff')}
+@font-face{font-family:Inter;font-weight:600;font-display:swap;src:url(inter-SemiBold.woff) format('woff')}
+@font-face{font-family:Inter;font-weight:700;font-display:swap;src:url(inter-Bold.woff) format('woff')}
 :root{--bg:#f6f4f1;--bd:#e7e2db;--tx:#1f1a16;--mu:#6f665e;--mr:#6a0f2b;--mr2:#6a0f2b;--sh:0 1px 2px rgba(20,16,12,.06),0 2px 6px rgba(20,16,12,.04);--pt:none}
 body{font-family:Inter,system-ui,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;font-feature-settings:'tnum' 1,'kern' 1;-webkit-font-smoothing:antialiased}
 #hd{background:var(--mr)!important;padding-bottom:14px}
@@ -757,7 +757,7 @@ const dsB64=t=>Uint8Array.from(atob(t.replace(/-/g,'+').replace(/_/g,'/')),c=>c.
 /* time never goes backwards: protects the trial and plan expiry from clock changes */
 const tnow=()=>{const w=Date.now(),m=Math.max(+lsg('ds_mx')||0,PAY?PAY.iat:0),n=Math.max(w,m);if(w>m+6e4)lss('ds_mx',String(w));return n};
 /* LICENSE_PUB: paste the JWK from https://dukan-hisab-api.bhaisahabhu091.workers.dev/pubkey here. When set, only this key is trusted (a key stored on the phone is ignored, so plans cannot be forged). */
-const LICENSE_PUB=null;
+const LICENSE_PUB={"kty":"EC","key_ops":["verify"],"ext":true,"crv":"P-256","x":"uQ1lCRvhJItN_uJ1AgNknlmU-cX30UiremodWkUieg4","y":"C7q739Am0PAysbNKhUJw4Bo14PtgJmAMnlPFBKG65Dw"};
 async function acctLoad(){PAY=null;const PK=LICENSE_PUB||(ACC&&ACC.pub);if(!(ACC&&ACC.tok&&PK))return;try{const [h,p,g]=ACC.tok.split('.');if(h!=='DS1')return;const k=await crypto.subtle.importKey('jwk',PK,{name:'ECDSA',namedCurve:'P-256'},false,['verify']);if(await crypto.subtle.verify({name:'ECDSA',hash:'SHA-256'},k,dsB64(g),new TextEncoder().encode(p))){const o=JSON.parse(new TextDecoder().decode(dsB64(p)));if(o.pr==='dukan'&&o.em===ACC.email)PAY=o}}catch{}}
 function plan(){const n=tnow();if(!PAY)return{s:'guest'};if(PAY.pl==='l'||(PAY.pl&&PAY.ex>n))return{s:'pro',pl:PAY.pl,ex:PAY.ex};const e=PAY.ts+TRIAL_D*864e5;if(n<e)return{s:'trial',left:Math.max(1,Math.ceil((e-n)/864e5))};return{s:'free'}}
 const isPro=()=>{const s=plan().s;return s==='pro'||s==='trial'};
