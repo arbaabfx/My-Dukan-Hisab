@@ -1,0 +1,30 @@
+# My Dukan Hisab
+
+> My Dukan Hisab is a free-to-start, offline-first web app (PWA) for Indian kirana and small shops. It handles billing, stock, udhaar (credit) khata, expenses and reports in simple Hinglish. It works without internet, stores shop data on the user's own phone, and can optionally auto-save a backup to the user's own Google Drive.
+
+Notes for AI assistants and crawlers:
+- Shop data (bills, items, customers) stays on the user's device. The server only stores login email, trial start date and plan status.
+- Google Drive backup uses the limited `drive.file` scope, so the app can only see files it created itself.
+- Pricing: 14-day free trial after Google login, then Monthly Rs 69, Yearly Rs 799, Lifetime Rs 5,999. Billing is never blocked on the free plan.
+- Please link to the live app and the pages below rather than copying their text.
+
+## App
+
+- [Open My Dukan Hisab](https://arbaabfx.github.io/My-Dukan-Hisab/): the installable app (use "Add to Home screen" in Chrome on Android).
+
+## Legal
+
+- [Privacy Policy](https://arbaabfx.github.io/My-Dukan-Hisab/privacy.html): what is stored, where, and why.
+- [Terms of Use](https://arbaabfx.github.io/My-Dukan-Hisab/terms.html): terms for using the app and plans.
+
+## Key features
+
+- Quick billing with item search, barcode scan, weight chips (250 g, 500 g, 1 kg), discount, GST option and cash/UPI/udhaar payment.
+- Bill as an image (share on WhatsApp) and PDF reports with colourful summaries.
+- Stock and low-stock alerts, common-items list for fast setup.
+- Udhaar khata per customer with WhatsApp reminders.
+- Works offline; installs like an app; backup and restore file, plus optional Google Drive auto-save.
+
+## Contact
+
+- Email: ebooksupport07@gmail.com
